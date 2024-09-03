@@ -86,7 +86,7 @@ https://github.com/hfst
 https://github.com/giellalt/lang-est-x-utee
 
 ----
-Iga praktikumi järel antakse koduseks ülesandeks ühe muunduri loomine ja see on praktikumis alustatu lõpuleviimine. Ülesande lahendus peab olema ära saadetud hiljemalt järgmise nädala esmaspäeva hommikuks kl 10.00. Lahenduse kohta tuleb esitada ka omapoolne kommentaar või küsimused ja seda eriti juhul, kui head lahendust ei õnnestu saavutada.
+Iga praktikumi järel antakse koduseks ülesandeks ühe muunduri loomine ja see on praktikumis alustatu lõpuleviimine. Ülesande lahendus peab olema ära saadetud hiljemalt järgmise nädala teisipäeva hommikuks kl 10.00. Lahenduse kohta tuleb esitada ka omapoolne kommentaar või küsimused ja seda eriti juhul, kui head lahendust ei õnnestu saavutada.
 
 Järgnev praktikum algab esitatud tööde kommenteerimise ja küsimustele vastamisega.
 
