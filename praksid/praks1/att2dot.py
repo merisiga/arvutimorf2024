@@ -1,3 +1,4 @@
+# kopeeritud F. Tyersi loengust https://cl.indiana.edu/~ftyers/courses/2020/Spring/L-545/practicals/02.html
 import sys
 
 print('digraph G { rankdir="LR"')
