@@ -15,6 +15,7 @@ Installida Homebrew (https://brew.sh/)
 
 Seejärel terminaliaknas:
 
+```bash
 brew install gnu-sed
 
 brew install git
@@ -22,7 +23,7 @@ brew install git
 brew install wget
 
 brew install python3
-
+```
 (Igaks juhuks: programmide otsingurada on keskkonnamuutuja PATH failis ~/.bash\_profile või Mac OS 10.12 (Catalina) puhul failis  ~/.zprofile)
 
 \-----------
@@ -41,23 +42,22 @@ kui on madalama numbriga Windows ja seda ei saa Windows 10-ks uuendada (või mä
 
 2. hfst installimine Ubuntu aknas
 
+```bash
 sudo apt-get update
 
 sudo apt install hfst
-
+```
 3. redaktoriks gedit
 
+```bash
 sudo apt install gedit 
-
+```
 4. dot graafide joonistamiseks
 
+```bash
 sudo apt install graphviz
+```
 
-tõmmata att2dot.py (kopeeritud F. Tyersi loengust https://cl.indiana.edu/~ftyers/courses/2020/Spring/L-545/practicals/02.html)
-
-wget https://kodu.ut.ee/~hkaalep/arvutimorf\_22/att2dot.py
-
-(või kopeerida brauseri abil)
 
 \-----------------------
 
