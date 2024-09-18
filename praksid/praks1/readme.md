@@ -5,7 +5,7 @@
 3. Näidisfailid
 4. Kodutöö
 
-## 1
+## Muundurite tegemise ja kasutamise tarkvara
 
 ### Mac OS/X
 
@@ -20,13 +20,24 @@ brew install gnu-sed
 
 brew install git
 
-brew install wget
-
 brew install python3
 ```
 (Igaks juhuks: programmide otsingurada on keskkonnamuutuja PATH failis ~/.bash\_profile või Mac OS 10.12 (Catalina) puhul failis  ~/.zprofile)
 
 \-----------
+
+HFST Download Page: https://hfst.github.io/downloads/index.html
+
+https://cl.indiana.edu/~ftyers/courses/2024/Spring/L-545/practicals/morphology/ :
+Open the following URL:
+
+http://apertium.projectjj.com/osx/nightly/
+
+    Download hfst-latest.tar.bz2
+    Extract the archive tar -xjvf hfst-latest.tar.bz2
+    Add hfst/bin to your path: export PATH=$PATH:<path_to_hfst_bin>
+    Add path to ~/.bashrc or ~/.bash_profile
+
 
 ### Windows 10 või 11
 
