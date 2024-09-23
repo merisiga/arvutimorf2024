@@ -1,0 +1,104 @@
+Multichar_Symbols
+
++N                ! Nimisõna
++A                ! Omadussõna
++Sg
++Pl
++Nom
++Gen
++Part
++Ill
++In
++El
++All              ! Alaleütlev
++Ad                 
++Abl
++Tr
++Term
++Es
++Abes
++Kom
+
+LEXICON Root
+
+kati+N:kati tüüp_pere ;    ! leksikaalne pool : pindesitus
+karu+N:karu tüüp_ema ;
+võru+N:võru tüüp_ema ;
+käbi+N:käbi tüüp_ema ;
+
+LEXICON tüüp_pere
+    +Sg: pere_sg ;
+    +Pl: pere_pl ;
+
+LEXICON tüüp_ema
+    +Sg: ema_sg ;
+    +Pl: ema_pl ;
+    
+LEXICON pere_sg
+
+    +Nom: # ;
+    +Gen: # ;
+    +Part:t # ;
+    +Ill:sse # ;
+    +In:s # ;
+    +El:st # ;
+    +All:le # ;
+    +Ad:l # ;
+    +Abl:lt # ;
+    +Tr:ks # ;
+    +Term:ni # ;
+    +Es:na # ;
+    +Abes:ta # ;
+    +Kom:ga # ;
+    
+LEXICON pere_pl
+
+    +Nom:d # ;
+    +Gen:de # ;
+    +Part:sid # ;
+    +Ill:desse # ;
+    +In:des # ;
+    +El:dest # ;
+    +All:dele # ;
+    +Ad:del # ;
+    +Abl:delt # ;
+    +Tr:deks # ;
+    +Term:deni # ;
+    +Es:dena # ;
+    +Abes:deta # ;
+    +Kom:dega # ;
+
+LEXICON ema_sg
+
+    +Nom: # ;
+    +Gen: # ;
+    +Part: # ;
+    +Ill:sse # ;
+    +In:s # ;
+    +El:st # ;
+    +All:le # ;
+    +Ad:l # ;
+    +Abl:lt # ;
+    +Tr:ks # ;
+    +Term:ni # ;
+    +Es:na # ;
+    +Abes:ta # ;
+    +Kom:ga # ;
+    
+LEXICON ema_pl
+
+    +Nom:d # ;
+    +Gen:de # ;
+    +Part:sid # ;
+    +Ill:desse # ;
+    +In:des # ;
+    +El:dest # ;
+    +All:dele # ;
+    +Ad:del # ;
+    +Abl:delt # ;
+    +Tr:deks # ;
+    +Term:deni # ;
+    +Es:dena # ;
+    +Abes:deta # ;
+    +Kom:dega # ;   
+
