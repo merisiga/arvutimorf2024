@@ -1,0 +1,7 @@
+Maris, Annika - 3 p
+Sofia - ei esitanud
+
+Silma jäänud küsitavused:
+Annika testfailis on +S asemel +N ja seetõttu seda vormi ei tunne muundur ära. See paistab nagu oleks testfaili viga, aga rangelt võttes ei saa ükski testfaili rida olla vigane - see ongi ju testimiseks mõeldud fail.
+
+Marisel puudub muundurist lühike sisseütlev "võrru". 
