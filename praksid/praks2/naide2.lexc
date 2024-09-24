@@ -1,0 +1,62 @@
+Multichar_Symbols
+
++N                ! Nimisõna
++A                ! Omadussõna
++Sg
++Pl
++Nom
++Gen
++Par
++All              ! alaeütlev
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+B1                ! b või null
+D1                ! d või null
+
+LEXICON Root
+
+koli+N:koli tüüp_ema ;    ! leksikaalne pool : pindesitus
+kena+A:kena tüüp_ema ;    ! pl par keni on puudu
+sugu+N:suG1u tüüp_ema ;
+vidin+N:vidin tüüp_vidin ;
+redel+N:redel tüüp_redel ;
+torssis+A:torssis # ;
+
+LEXICON tüüp_ema
+  +Sg+Nom: # ;
+         :%{NA%} sg_gen_jt ; 
+  +Sg+Par:%> # ;              ! kas %> peaks siin üldse olema ?
+      +Pl:%>de semkäänded ;
+  +Pl+Par:%>sid # ;
+    
+LEXICON tüüp_vidin
+  +Sg+Nom: # ;
+         :a 2C; 
+
+LEXICON tüüp_redel
+  +Sg+Nom: # ;
+         :i 2C; 
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te semkäänded ;
+  +Pl+Par:%>id # ;
+
+
+LEXICON sg_gen_jt
+
+  +Sg+Gen: # ;
+         : semkäänded ;
+  +Pl+Nom:%>d # ;
+  
+
+LEXICON semkäänded
+
+    +All:%>le # ;
+
+
+
