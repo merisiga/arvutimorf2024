@@ -1,0 +1,108 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaasõna
+ 
++Sg
++Pl
+
++Nom ! Nimetav
++Gen ! Omastav
++Part ! Osastav
++Ill ! Sisseütlev
++Ine ! Seesütlev
++Ela ! Seestütlev
++All ! Alaleütlev
++Ade ! Alalütlev
++Abl ! Alaltütlev
++Trl ! Saav
++Ter ! Rajav
++Ess ! Olev
++Abe ! Ilmaütlev
++Com ! Kaasaütlev
+
+LEXICON Root
+
+Sofia+S:Sofia tüüp_sofia ;
+Hiir+S:Hiir tüüp_hiir ;
+Tartu+S:Tartu tüüp_sofia ;
+Suur+A:Suur tüüp_hiir ;
+
+LEXICON tüüp_sofia
+	+Sg: sofia_sg ;
+	+Pl: sofia_pl ;
+
+LEXICON tüüp_hiir
+	+Sg: hiir_sg ;
+	+Pl: hiir_pl ;
+
+LEXICON sofia_sg
+	+Nom: # ;
+	+Gen: # ;
+	+Part:t # ;
+	+Ill:sse # ;
+	+Ine:s # ;
+	+Ela:st # ;
+	+All:le # ;
+	+Ade:l # ;
+	+Abl:lt # ;
+	+Trl:ks # ;
+	+Ter:ni # ;
+	+Ess:na # ;
+	+Abe:ta # ;
+	+Com:ga # ;
+
+LEXICON sofia_pl
+	+Nom:d # ;
+	+Gen:te # ;
+	+Part:id # ;
+	+Ill:tesse # ;
+	+Ine:tes # ;
+	+Ela:test # ;
+	+All:tele # ;
+	+Ade:tel # ;
+	+Abl:telt # ;
+	+Trl:teks # ;
+	+Ter:teni # ;
+	+Ess:tena # ;
+	+Abe:teta # ;
+	+Com:tega # ;
+
+LEXICON hiir_sg
+	+Nom: # ;
+	+Gen:e # ;
+	+Part:t # ;
+	+Ill:esse # ;
+	+Ine:es # ;
+	+Ela:est # ;
+	+All:ele # ;
+	+Ade:el # ;
+	+Abl:elt # ;
+	+Trl:eks # ;
+	+Ter:eni # ;
+	+Ess:ena # ;
+	+Abe:eta # ;
+	+Com:ega # ;
+
+LEXICON hiir_pl
+	+Nom:ed # ;
+	+Gen:te # ;
+	+Part:i # ;
+	+Ill:tesse # ;
+	+Ine:tes # ;
+	+Ela:test # ;
+	+All:tele # ;
+	+Ade:tel # ;
+	+Abl:telt # ;
+	+Trl:teks # ;
+	+Ter:teni # ;
+	+Ess:tena # ;
+	+Abe:teta # ;
+	+Com:tega # ;
