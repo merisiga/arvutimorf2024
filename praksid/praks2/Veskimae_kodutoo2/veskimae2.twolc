@@ -1,0 +1,84 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+! 
+
+ G1:g ! lagi
+ G1:0 ! lae
+ B1:b ! tuba
+ B1:0 ! toa
+ D1:d ! rida
+ D1:0 ! rea
+ S1:s ! süsi
+ S1:0 ! söe
+
+; 
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+VoicelessConsonant = g b d k p t s š h f
+		     G B D K P T S Š H F ;
+
+
+Definitions
+
+Rules
+
+"gi muutub ki-ks helitu hääliku järel"
+
+gi:ki <=> VoicelessConsonant _ ;
+  
+! lexical: k a s gi
+! surface: k a s ki
+
+"Kaashäälikute astmevaheldus: kk, pp, tt → k, p, t"
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
+    where Cx in ( kk pp tt )
+          Cy in (  k  p  t  )
+    matched ;
+
+
+"Kaashäälikute astmevaheldus: k, p, t → g, b, d"
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
+    where Cx in (  k  p  t  )
+          Cy in (  g  b  d  )
+    matched ;
+
+"Konsonadi kadumisel i madaldub e-ks"
+
+i:e  <=>  [.#. | Consonant]    _   G1:0 :Vowel ;
+
+! lexical: v ä G1 i {NA}
+! surface: v ä  0 e  0
+
+"Konsonandi kadumisel u madaldub o-ks"
+
+Vx:Vy  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
+            [.#. | Consonant]    _   G1:0 :Vowel ;
+       where Vx in ( u )
+             Vy in ( o )
+       matched;
+
+! lexical: l u G1 u {NA}
+! surface: l o  0 o  0  
+
+"Konsonandi kadumisel ü madaldub ö-ks"
+
+ü:ö  <=>  [.#. | Consonant]    _   S1:0 :Vowel ;
+
+! lexical: s ü S1 i {NA}
+! surface: s ö  0 e  0
