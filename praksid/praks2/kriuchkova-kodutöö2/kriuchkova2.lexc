@@ -1,0 +1,110 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaasõna
+ 
++Sg
++Pl
+
++Nom ! Nimetav
++Gen ! Omastav
++Part ! Osastav
++Ill ! Sisseütlev
++Ine ! Seesütlev
++Ela ! Seestütlev
++All ! Alaleütlev
++Ade ! Alalütlev
++Abl ! Alaltütlev
++Trl ! Saav
++Ter ! Rajav
++Ess ! Olev
++Abe ! Ilmaütlev
++Com ! Kaasaütlev
+
++gi_ki
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1 ! g või null
+B1 ! b või null
+D1 ! d või null
+S1 ! s või null
+TT1 ! tt või t
+
+
+LEXICON Root
+
+Sofia+S:Sofia tüüp_sofia ;     ! leksikaalne pool : pindesitus
+Hiir+S:Hiir tüüp_hiir ;
+Tartu+S:Tartu tüüp_sofia ;
+Suur+A:Suur tüüp_hiir ;
+tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+pett+S:peTT1 tüüp_pett ;       ! tt -> t
+käsi+S: käS1 tüüp_käsi ;      ! s -> 0
+vesi+S: veS1 tüüp_käsi ;
+
+LEXICON tüüp_sofia
+	+Sg+Nom: gi_ki ;
+		:%{NA%} sg_gen ;
+	+Sg+Part:%>t  gi_ki ;             
+      	+Pl:%>de semkäänded ; 
+	+Pl+Part:%>sid  gi_ki ;
+
+LEXICON tüüp_hiir
+	+Sg+Nom:  gi_ki ;
+		:%{NA%}%>e sg_gen ;
+	+Sg+Part:%>t  gi_ki ;
+	+Pl:%>te semkäänded ;
+	+Pl+Part:%>i  gi_ki ;
+
+LEXICON tüüp_tuba
+        +Sg+Nom: gi_ki ;
+                :%{NA%} sg_gen ;
+        +Sg+Part:%>t  gi_ki ;
+        +Pl:%>de semkäänded ;
+        +Pl+Part:%>sid  gi_ki ;
+
+LEXICON tüüp_pett
+	+Sg+Nom: gi_ki ;
+		:%{NA%}%>i sg_gen ;
+	+Sg+Part:%>i gi_ki ;
+	+Pl:%>ide semkäänded ;
+	+Pl+Part:%>isid gi_ki ;
+
+LEXICON tüüp_käsi
+	+Sg+Nom:%>i gi_ki ;
+		+Sg:%{NA%}%>e sg_gen ;
+	+Sg+Part:{NA%}%>tt gi_ki ;
+		+Pl:{NA%}%>te semkäänded ;
+	+Pl+Part:%>i gi_ki ;
+
+LEXICON sg_gen
+	+Sg+Gen:%> gi_ki ;
+	       :%> semkäänded ; 
+	+Pl+Nom:%>d gi_ki ;
+
+LEXICON semkäänded
+	+Gen: gi_ki ;
+	+Ill:%>sse gi_ki ;
+	+Ine:%>s gi_ki ;
+	+Ela:%>st gi_ki ;
+	+All:%>le gi_ki ;
+	+Ade:%>l gi_ki ;
+	+Abl:%>lt gi_ki ;
+	+Trl:%>ks gi_ki ;
+	+Ter:%>ni gi_ki ;
+	+Ess:%>na gi_ki ;
+	+Abe:%>ta gi_ki ;
+	+Com:%>ga gi_ki ;
+
+LEXICON gi_ki
+	0: # ;          
+        +gi_ki:%>gi # ;      

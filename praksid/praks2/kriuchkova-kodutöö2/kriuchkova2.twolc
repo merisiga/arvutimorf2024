@@ -1,0 +1,104 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+! 
+
+ G1:g ! lagi
+ G1:0 ! lae
+ B1:b ! tuba
+ B1:0 ! toa
+ D1:d ! rida
+ D1:0 ! rea
+ S1:s ! süsi
+ S1:0 ! söe
+ TT1:tt ! pett
+ TT1:t ! peti
+ PP1:pp
+ PP1:p
+ KK1:kk
+ KK1:k
+; 
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+VoicelessConsonant = g b d k p t s š h f
+		     G B D K P T S Š H F ;
+
+
+Definitions
+
+Rules
+
+!
+
+"Kaashäälikute astmevaheldus: kk, pp, tt → k, p, t"
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
+    where Cx in ( KK1 PP1 TT1 )
+          Cy in ( k p t  )
+    matched ;
+
+
+"Nõrgas astmes vahel gbds kaob"
+
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
+    where Cx in (  G1 B1 D1 S1)
+          Cy in (  0  0  0  0)
+    matched ;
+
+"Konsonadi kadumisel i madaldub e-ks"
+
+i:e  <=> [Vowel] S1:0 _ ;
+
+! lexical: k ä S1 i {NA}
+! surface: k ä 0 e  0
+
+"Konsonandi kadumisel u madaldub o-ks"
+
+u:o <=> _ B1:0 [Vowel] ;
+
+! lexical: t u B1 a {NA}
+! surface: t o 0  a  0  
+
+"gi vs ki"
+
+g:k <=> [VoicelessConsonant] _ i ;
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
