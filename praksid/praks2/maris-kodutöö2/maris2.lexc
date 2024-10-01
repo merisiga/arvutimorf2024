@@ -1,0 +1,88 @@
+Multichar_Symbols
+
++N                ! Nimisõna
++A                ! Omadussõna
++Sg
++Pl
++Nom
++Gen
++Part
++Ill
++In
++El
++All              ! Alaleütlev
++Ad                 
++Abl
++Tr
++Term
++Es
++Abes
++Kom
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+B1                ! b või null
+D1                ! d või null
+S1                ! s või null
+
+LEXICON Root
+
+kati+N:kati tüüp_pere ;    ! leksikaalne pool : pindesitus
+karu+N:karu tüüp_ema ;
+võru+N:võru tüüp_ema ;
+käbi+N:käbi tüüp_ema ;
+täpp+N:täpp tüüp_täpp ;
+kott+N:kott tüüp_täpp ;
+rida+N:riD1a tüüp_ema ;
+süsi+N:süS1i tüüp_süsi ;
+
+LEXICON tüüp_ema
+  +Sg+Nom: # ;
+         :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%> # ;            
+      +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid # ;
+
+LEXICON tüüp_pere
+  +Sg+Nom: # ;
+  +Sg:%{NA%} sg_gen_jt ; 
+  +Sg+Part:%>t # ;            
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid # ;
+
+LEXICON tüüp_täpp
+  +Sg+Nom: # ;
+  +Sg:%{NA%}%>i sg_gen_jt ; 
+  +Sg+Part:%>i # ;            
+  +Pl:%>ide semkäänded ;
+  +Pl+Part:%>isid # ;
+
+LEXICON tüüp_süsi
+  +Sg+Nom: # ;
+           :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%>tt # ;            
+      +Pl:%>te semkäänded ;
+  +Pl+Part:%> # ;
+
+LEXICON sg_gen_jt
+
+  +Sg+Gen: # ;
+         : semkäänded ;
+  +Pl+Nom:%>d # ;
+  
+
+LEXICON semkäänded
+
+    +Ill:%>sse # ;
+    +In:%>s # ;
+    +El:%>st # ;
+    +All:%>le # ;
+    +Ad:%>l # ;
+    +Abl:%>lt # ;
+    +Tr:%>ks # ;
+    +Term:%>ni # ;
+    +Es:%>na # ;
+    +Abes:%>ta # ;
+    +Kom:%>ga # ;
