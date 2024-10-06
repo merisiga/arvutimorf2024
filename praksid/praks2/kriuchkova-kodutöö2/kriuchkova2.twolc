@@ -19,6 +19,8 @@ A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
  D1:0 ! rea
  S1:s ! süsi
  S1:0 ! söe
+ T2:t ! paat
+ T2:d ! paadi
  TT1:tt ! pett
  TT1:t ! peti
  PP1:pp
@@ -38,7 +40,6 @@ Consonant = b c d f g h j k l m n p q r s š z ž t v w x
 VoicelessConsonant = g b d k p t s š h f
 		     G B D K P T S Š H F ;
 
-
 Definitions
 
 Rules
@@ -46,11 +47,14 @@ Rules
 !
 
 "Kaashäälikute astmevaheldus: kk, pp, tt → k, p, t"
+
 Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
     where Cx in ( KK1 PP1 TT1 )
-          Cy in ( k p t  )
+          Cy in ( k p t )
     matched ;
 
+! lexical: p e TT1 {NA}
+! surface: p e t  i 
 
 "Nõrgas astmes vahel gbds kaob"
 
@@ -59,23 +63,36 @@ Cx:Cy  <=> _ :Vowel* %{NA%}: ;
           Cy in (  0  0  0  0)
     matched ;
 
-"Konsonadi kadumisel i madaldub e-ks"
+! lexical: t u B1 a {NA}
+! surface: t o 0 a   0
 
-i:e  <=> [Vowel] S1:0 _ ;
+"Nõrgas astmes vahel t muutb d-ks"
 
-! lexical: k ä S1 i {NA}
-! surface: k ä 0 e  0
+Cx:Cy  <=> _ :Vowel* %{NA%}:;  
+    where Cx in (  T2)
+          Cy in (  d)
+    matched ;
+
+! lexical: p a a t {NA}
+! surface: p a a d  i
 
 "Konsonandi kadumisel u madaldub o-ks"
 
-u:o <=> _ B1:0 [Vowel] ;
+u:o <=> _ :(B1:0 | D1:0 | G1:0 | S1:0)([Vowel] | #)%{NA%}: ;   
+
+! ([Vowel] | #) tehti seetõttu, et sõnas tugi ei lõppe morfeem tuG1 vokaaliga
 
 ! lexical: t u B1 a {NA}
 ! surface: t o 0  a  0  
 
-"gi vs ki"
+"gi -> ki"
 
-g:k <=> [VoicelessConsonant] _ i ;
+g:k <=> [VoicelessConsonant] _ i # ;    
+
+! kui sufiksile eelneb hääletu konsonant, siis g muutub k-ks
+  
+! lexical: k a s gi
+! surface: k a s ki
 
 
 
