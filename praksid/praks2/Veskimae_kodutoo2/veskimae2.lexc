@@ -28,6 +28,9 @@ Multichar_Symbols
 +Abe ! Ilmaütlev
 +Com ! Kaasaütlev
 
++gi_ki_liide
+
+
 %>                ! morfeemi piir
 %{NA%}            ! nõrk aste
 
@@ -37,7 +40,7 @@ PP1		! pp või p
 TT1		! tt või t
 
 K1		! k või g
-B1		! p või b
+B1		! b või null
 T1		! t või d
 S1		! s või null
 G1		! g või null
@@ -45,82 +48,66 @@ G1		! g või null
 LEXICON Root
 
 Annika+S: Annika tüüp_annika ;
-Leppik+S: Leppik tüüp_leppik ;
 Randla+S: Randla tüüp_annika ;
 Tartu+S: Tartu tüüp_annika ;
-pakk+S: paKK1 tüüp_pakk ;
-nõrk+A: nõrK1 tüüp_nõrk ;
+kett+S: keTT1 tüüp_kett ;
+luba+S: luB1a tüüp_luba ;
+riik+S: riiK1 tüüp_riik ;
 süsi+S: süS1i tüüp_süsi ;
-vägi+S: väG1i tüüp_vägi ;
-
+vesi+S: veS1 tüüp_vesi ;
 
 LEXICON tüüp_annika
 
-	+Sg+Nom: # gi_ki_liide ;
-	+Sg+Gen: %> semkäänded ;
-	+Sg+Part: %>t gi_ki_liide ;
-	+Pl+Nom: %>d gi_ki_liide ;
-	+Pl+Gen: %>te semkäänded ;
-	+Pl+Part: %>sid gi_ki_liide ;
+ +Sg+Nom: # gi_ki_liide ;
+	:%> sg_gen_jt ;
++Sg+Part:%>t gi_ki_liide ;
+     +Pl:%>te semkäänded ;
++Pl+Part:%>id ;
 
-LEXICON tüüp_leppik
+LEXICON tüüp_kett 
+ +Sg+Nom: # gi_ki_liide ;
+        :%{NA%}i sg_gen_jt ;
++Sg+Part:%i gi_ki_liide ;
+     +Pl:%>ide semkäänded ;
++Pl+Part:%>e gi_ki_liide ;
 
-	+Sg+Nom: # gi_ki_liide ;
-	+Sg+Gen: %>u semkäänded ;
-	+Sg+Part: %>ut gi_ki_liide ;
-	+Pl+Nom: %>ud gi_ki_liide ;
-	+Pl+Gen: %>ute semkäänded ;
-	+Pl+Part: %>uid gi_ki_liide ;
+LEXICON tüüp_luba
+ +Sg+Nom: # gi_ki_liide ;
+        :%{NA%} sg_gen_jt ;
++Sg+Part: gi_ki_liide ;
+     +Pl:%de semkäänded ;
++Pl+Part:%sid gi_ki_liide ;
 
-LEXICON tüüp_pakk
-	+Sg+Nom: # ;
-	+Sg+Gen: %{NA%}K1i gi_ki_liide ;
-	+Sg+Part: %{NA%}KK1i gi_ki_liide ;
-	+Pl+Nom: %>d gi_ki_liide ;
-	+Pl+Gen: %>de semkäänded ;
-	+Pl+Part: %>sid gi_ki_liide ;
-
-LEXICON tüüp_nõrk
-
-	+Sg+Nom: # ;
-	+Sg+Gen: %{NA%}K1a gi_ki_liide ;
-	+Sg+Part: %{NA%}K1a gi_ki_liide ;
-	+Pl+Nom: %>d gi_ki_liide ;
-	+Pl+Gen: %>de semkäänded ;
+LEXICON tüüp_riik
+ +Sg+Nom: # gi_ki_liide ;
+        :%{NA%}%>i sg_gen_jt ;
++Sg+Part:%>i gi_ki_liide ;
+     +Pl:%>ide semkäänded ;
++Pl+Part:%>e gi_ki_liide ;
 
 LEXICON tüüp_süsi
+ +Sg+Nom: # gi_ki_liide ;
+        :%{NA%} sg_gen_jt ;
++Sg+Part:%>tt # ;
+     +Pl:%>te semkäänded ;
++Pl+Part:%>d gi_ki_liide ;
 
-  +Sg+Nom: # ;
-           :%{NA%} sg_gen_jt ; 
-  +Sg+Part:%>tt # ;            
-      +Pl:%>te semkäänded ;
-  +Pl+Part:%> # ;
+LEXICON tüüp_vesi
++Sg+Nom: # gi_ki_liide ;
+:%{NA%}%>e sg_gen_jt ;
++Sg+Part:%{NA%}%>tt gi_ki_liide ;
++Pl:%{NA%}%>te semkäänded ;
++Pl+Part:% gi_ki_liide ;
 
 LEXICON sg_gen_jt
 
-  +Sg+Gen: # ;
-         : semkäänded ;
-  +Pl+Nom:%>d # ;
-
-LEXICON tüüp_vägi
-
-    +Sg+Nom: # ;                     ! Nimetav: vägi
-    +Sg+Gen: %{NA%}G1e gi_ki_liide ;   ! Omastav: väe
-    +Sg+Part: %{NA%}G1 gi_ki_liide ; ! Osastav: väge
-    +Pl+Nom: %>d gi_ki_liide ;        ! Mitmus: väed
-    +Pl+Gen: %>de semkäänded ;        ! Mitmuse omastav: vägede
-    +Pl+Part: %>sid gi_ki_liide ;
-
-
-LEXICON gi_ki_liide
-
-	gi # ;
-	ki # ;
-	# ;  ! Kui gi või ki puudub
-
+  +Sg+Gen: # gi_ki_liide ;
+      +Sg: semkäänded ;
+  +Pl+Nom:%>d gi_ki_liide ;
 
 LEXICON semkäänded
 
+	+Gen: gi_ki_liide ;
 	+Ill: %>sse gi_ki_liide ;
 	+Ine: %>s gi_ki_liide ;
 	+Ela: %>st gi_ki_liide ;
@@ -133,3 +120,6 @@ LEXICON semkäänded
 	+Abe: %>ta gi_ki_liide ;
 	+Com: %>ga gi_ki_liide ;
 
+LEXICON  gi_ki_liide
+	+gi_ki_liide: gi # ;
+	# ; ! kui gi või ki puudub 
