@@ -1,0 +1,86 @@
+
+Maris 3 p
+
+Kas teha nii, et pole erimärke produktiivse häälikuteisenduse (õigemini täheteisenduse) jaoks ?
+
+"Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
+
+Cx:Cy  <=> Cz _ %{NA%}:0 ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( K1 P1 T1 ) 
+           Cy in (  0  0  0 )
+           Cz in (  k  p  t )
+     matched ;
+
+#uus versioon:
+Cx:0  <=> Cx _ %{NA%}:0 ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( k p t ) ;
+
+
+"Nõrgeneva astmevahelduse korral k->g, p->b, t->d"
+
+Cx:Cy  <=> _ %{NA%}:0 ; 
+      where Cx in ( K2 P2 T2 )
+            Cy in (  g  b  d )
+      matched ;
+
+#uus versioon:
+Cx:Cy  <=> :Vowel _ %{NA%}:0 ; 
+      where Cx in ( k p t )
+            Cy in ( g b d )
+      matched ;
+
+
+kuidas tegin teistele run.sh failid:
+cat ../maris-kodutöö2/run.sh | sed 's/maris/kriuchkova/g' > run.sh
+
+
+Sofia
+
+cat out.txt | grep '#'
+
+
+"gi -> ki"
+
+g:k <=> [VoicelessConsonant] _ i # ;    
+
+lesginka -> leskinka
+
+---------
+võiks teha nii:
+LEXICON gi_ki                      ! Leksikon sufiksite gi või ki lisamisek (vaikimisi gi)
+        +gi_ki: %>gi # ;
+        # ;  ! Kui gi või ki puudub  
+
+twol reegel:        
+g:k <=> [VoicelessConsonant] %>: _ i # ;    
+
+------
+defineerite uue sümboli tt
+
+ TT1:tt ! pett
+ TT1:t ! peti
+
+Veskimäe
+
+twol reegel paneb vastavusse kaks mitmetähelist sümbolit, aga need on defineerimata
+
+gi:ki <=> .......
+
+hfst-fst2strings veskimae2_fono.hfst > out.txt
+
+kett+S+Sg+Ela+gi_ki_liide:ketistgi
+
+kett+S+Sg+Nom:kett#
+süsi+S+Sg+Part:söitt
+süsi+S+Pl+Part+gi_ki_liide:söidgi
+
+süsi+S+Sg+Nom:söi#
+süsi+S+Sg+Part:süsitt
+süsi+S+Pl+Part+gi_ki_liide:süsidgi
+süsi+S+Pl+Part:süsid
+süsi+S+Pl+Gen+gi_ki_liide:süsitegi
+Tartu+S+Sg+Gen:Tartu#
+
+
+
+
