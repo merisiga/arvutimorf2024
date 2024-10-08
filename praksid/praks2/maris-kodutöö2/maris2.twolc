@@ -20,6 +20,23 @@ A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
  S1:s ! süsi
  S1:0 ! söe
 
+ K1:k ! vokk
+ K1:0 ! voki
+ P1:p ! täpp
+ P1:0 ! täpi
+ T1:t ! kott
+ T1:0 ! koti
+
+ GK:g ! kalagi
+ GK:k ! kurkki
+
+ T2:t
+ T2:d
+ P2:p
+ P2:b
+ K2:k ! kurk
+ K2:g ! kurgi
+
 
 ;
 
@@ -31,6 +48,8 @@ Vowel = A E I O U Õ Ä Ö Ü Y
 Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
             B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
 
+VoicelessConsonant = g b d k p t s h f š z ž
+                     G B D K P T S H F Š Z Ž ;  
 
 Definitions
 
@@ -51,15 +70,14 @@ Cx:Cy  <=> _ :Vowel* %{NA%}: ;         ! võib-olla võiks kontekst olla ka: <=>
 
 "u madaldub o-ks"
 
-Vx:Vy  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
-            [.#. | Consonant]    _   G1:0 :Vowel ;
-       where Vx in ( u )
-             Vy in ( o )
-       matched;
+u:o  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
+          [.#. | Consonant]    _   G1:0 %{NA%}:0 [%>:0] :Vowel ;
 
 ! lexical: s u G1 u {NA}
 ! surface: s o  0 o  0  
 
+! lexcial: t u G1 {NA} > e > l
+! surface: t o 0  0    0 e
 
 "i madaldub e-ks"
 
@@ -70,25 +88,28 @@ i:e  <=>  [.#. | Consonant]    _   D1:0 :Vowel ;
 
 "ü madaldub ö-ks"
 
-ü:ö  <=>  [.#. | Consonant]    _   S1:0 :Vowel ;
+ü:ö  <=>  [.#. | Consonant]    _   S1:0  %{NA%}:0 [%>:0] :Vowel ;
+
+! lexical: s ü S1 {NA} > e
+! surface: s ö 0  0    0 e
 
 
-"i madaldub e-ks"
 
-i:e  <=>  [.#. | Consonant] :Vowel S1:0  _   ;
+"Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
 
-! lexical: s ü S1 i {NA}
-! surface: s ö  0 e  0
+Cx:Cy  <=> Cz _ %{NA%}:0 ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( K1 P1 T1 ) 
+           Cy in (  0  0  0 )
+           Cz in (  k  p  t )
+     matched ;
 
+"Nõrgeneva astmevahelduse korral k->g, p->b, t->d"
 
-"Nõrgenev astmevaheldus pp-> p" 
-p:0 <=>  p _ %{NA%}:0 ;
+Cx:Cy  <=> _ %{NA%}:0 ; 
+      where Cx in ( K2 P2 T2 )
+            Cy in (  g  b  d )
+      matched ;
 
-"Nõrgenev astmevaheldus kk-> k" 
-k:0 <=>  k _ %{NA%}:0 ;
-
-"Nõrgenev astmevaheldus tt-> t" 
-t:0 <=>  t _ %{NA%}:0 ;
-
-! lexical: t ä p p {NA} i l e
-! surface: t ä p 0  0   i l e 
+"Kui sufiksile eelneb hääletu konsonant, siis gi -> ki"
+GK:k <=> :VoicelessConsonant %>:0 _  ; 
+  
