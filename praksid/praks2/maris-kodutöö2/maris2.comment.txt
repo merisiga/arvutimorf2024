@@ -1,41 +1,18 @@
-Multichar_Symbols
+1. Suurt segadust tekitas %>:0 tähise vajadus twolc reeglites. Ilma selleta minul ei töötanud,
+aga on veider, et ärakustutatud tähiseid ka peab parema poole tingimusse lisama.
 
-+N                ! Nimisõna
-+A                ! Omadussõna
-+Sg
-+Pl
-+Nom
-+Gen
-+Part
-+Ill
-+In
-+El
-+All              ! Alaleütlev
-+Ad                 
-+Abl
-+Tr
-+Term
-+Es
-+Abes
-+Kom
+2. Päris täpselt ei saa aru, mida teevad nurksulud. Mina kasutasin neid valikulisena.
 
-%>                ! morfeemi piir
-%{NA%}            ! nõrk aste
-
-G1                ! g või null
-B1                ! b või null
-D1                ! d või null
-S1                ! s või null
-K1
-K2
-P1
-P2
-T1
-T2
-GK
+3. Miks ei saa gi_loppu panna ühte kohta, vaid peab lisama igasse kohta eraldi?
+Proovisin  mitu tundi järgmist asja tööle saada, aga kahjuks ei õnnestunud :(
 
 
 LEXICON Root
+
+juured gi_lopp;
+
+
+Lexicon juured
 
 kati+N:kati tüüp_pere ;    ! leksikaalne pool : pindesitus
 karu+N:karu tüüp_ema ;
@@ -53,45 +30,45 @@ nimi+S:nim tüüp_tugi ;
 paat+S:paaT2 tüüp_täpp; 
 
 LEXICON tüüp_ema
-  +Sg+Nom: gi_lopp ;
+  +Sg+Nom:  ;
   :%{NA%} sg_gen_jt ; 
-  +Sg+Part:%> gi_lopp ;            
+  +Sg+Part:%>  ;            
   +Pl:%>de semkäänded ;
-  +Pl+Part:%>sid gi_lopp ;
+  +Pl+Part:%>sid  ;
 
 LEXICON tüüp_pere
-  +Sg+Nom: gi_lopp ;
+  +Sg+Nom:  ;
   :%{NA%} sg_gen_jt ; 
-  +Sg+Part:%>t gi_lopp ;            
+  +Sg+Part:%>t  ;            
   +Pl:%>de semkäänded ;
-  +Pl+Part:%>sid gi_lopp ;
+  +Pl+Part:%>sid  ;
 
 LEXICON tüüp_täpp
-  +Sg+Nom: gi_lopp ;
+  +Sg+Nom:  ;
   :%{NA%}%>i sg_gen_jt ; 
-  +Sg+Part:%>i gi_lopp ;            
+  +Sg+Part:%>i  ;            
   +Pl:%>ide semkäänded ;
-  +Pl+Part:%>isid gi_lopp ;
+  +Pl+Part:%>isid  ;
 
 LEXICON tüüp_käsi
-  +Sg+Nom:%>i gi_lopp ;
+  +Sg+Nom:%>i  ;
   :%{NA%}%>e sg_gen_jt ;
-  +Sg+Part:{NA%}%>tt gi_lopp ;
+  +Sg+Part:{NA%}%>tt  ;
   +Pl:{NA%}%>te semkäänded ;
-  +Pl+Part:%>i gi_lopp ;
+  +Pl+Part:%>i  ;
 
 LEXICON tüüp_tugi
-	+Sg+Nom:%>i gi_lopp ;
+	+Sg+Nom:%>i  ;
 	:%{NA%}%>e sg_gen_jt ;
-	+Sg+Part:%>e gi_lopp ;
+	+Sg+Part:%>e  ;
 	+Pl:%>ede semkäänded ;
-	+Pl+Part:%>esid gi_lopp ;
+	+Pl+Part:%>esid  ;
 
 LEXICON sg_gen_jt
 
-  +Sg+Gen: gi_lopp ;
+  +Sg+Gen:  ;
   +Sg: semkäänded ;
-  +Pl+Nom:%>d gi_lopp ;
+  +Pl+Nom:%>d  ;
 
 LEXICON gi_lopp
   +Rohk:%>GKi # ;
@@ -100,14 +77,14 @@ LEXICON gi_lopp
 
 LEXICON semkäänded
 
-    +Ill:%>sse gi_lopp ;
-    +In:%>s gi_lopp ;
-    +El:%>st gi_lopp ;
-    +All:%>le gi_lopp ;
-    +Ad:%>l gi_lopp ;
-    +Abl:%>lt gi_lopp ;
-    +Tr:%>ks gi_lopp ;
-    +Term:%>ni gi_lopp ;
-    +Es:%>na gi_lopp ;
-    +Abes:%>ta gi_lopp ;
-    +Kom:%>ga gi_lopp ;
+    +Ill:%>sse  ;
+    +In:%>s  ;
+    +El:%>st  ;
+    +All:%>le  ;
+    +Ad:%>l  ;
+    +Abl:%>lt  ;
+    +Tr:%>ks  ;
+    +Term:%>ni  ;
+    +Es:%>na  ;
+    +Abes:%>ta  ;
+    +Kom:%>ga  ;
