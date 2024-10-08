@@ -97,7 +97,7 @@ LEXICON tüüp_vesi
 :%{NA%}%>e sg_gen_jt ;
 +Sg+Part:%{NA%}%>tt gi_ki_liide ;
 +Pl:%{NA%}%>te semkäänded ;
-+Pl+Part:% gi_ki_liide ;
++Pl+Part: gi_ki_liide ;
 
 LEXICON sg_gen_jt
 
