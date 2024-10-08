@@ -1,0 +1,70 @@
+Maris  - 3 p
+Annika - 2 p
+Sofia -  1 p
+
+---------------
+Maris: 
+
+muundur ei tee seda, mida vaja, ning ka küsimusi ei ole - 1 p
+aga lisaks on koostatud run.sh - 2 lisapunkti
+
+teil on run.sh skriptis väljakommenteeritud rida, mida ilmselt kasutasite testimiseks
+#hfst-fst2strings maris2_fono.hfst > out.txt
+
+seal on 216 sõnavormi, mille seas ka üksjagu vigu:
+
+süsi+N+Sg+Part:süsitt
+süsi+N+Pl+Ill:süsitesse
+süsi+N+Pl+In:süsites
+süsi+N+Pl+El:süsitest
+süsi+N+Pl+All:süsitele
+süsi+N+Pl+Ad:süsitel
+süsi+N+Pl+Abl:süsitelt
+süsi+N+Pl+Tr:süsiteks
+süsi+N+Pl+Term:süsiteni
+süsi+N+Pl+Es:süsitena
+süsi+N+Pl+Abes:süsiteta
+süsi+N+Pl+Kom:süsitega
+
+puuduvad tavalised sisseütleva vormid (ehkki on esitatud erandlikud täpisse ja kotisse)
+täpp+N+Sg+Ill:täppi
+kott+N+Sg+Ill:kotti
+
+tegemata on koduülesande osad:
+1. muuta oma lexc faili, nii et mistahes sõnavorm võib (ehkki ei pruugi) lõppeda gi või ki-ga;
+
+    ... ja lisaks kirjutada 2-tasemeline reegel, mis helitu hääliku (g b d k p t s š h f) järel muudab gi ki-ks 
+
+2. lisada kaks nõrgeneva astmevaheldusega sõna oma lexc faili, kusjuures astmevaheldus hõlmab sulghäälikuid
+
+      2.2. k p t -> g b d 
+
+   ... ja lisaks kirjutada nõrgeneva astmevahelduse 2-tasemelised reeglid 
+
+---------------
+Annika:
+
+Kodutöö iga alamülesande jaoks olete midagi kirjutanud, aga peaaegu miski ei tööta õigesti. Ühte valesti töötavat asja oskasite ka ise märkida.
+Vihje: kontrolli ühe- ja mitmetäheliste sümbolite esitusi, s.h. ka 2-tasemeliste reeglite juures!
+
+Sofia:
+
+Mitmuse tunnus on mõnel juhul vale (Sofia, Tartu); muu täishääliku kui o madaldumisega seotud sõnu polegi
+gi/ki valiku puhul ki-d kunagi ei valitagi 
+
+lexc käsi, vesi puhul on i õigesti määratud jätkuleksikoni  (võrdle Marise süsi-ga lexc-s)
+----------------
+küsimused kõigile: milliseid vigu te oma töö jooksul tegite (mis nüüdseks on parandatud) ja mis koht raske tundus?
+
+tänase praktikumi teemaks on teie kirjelduste parandamine-kohendamine, nii et muundurid õigeks muutuvad
+
+
+testsõnaks veel:
+tugi
+prügi
+nimi
+paat
+
+
+
+
