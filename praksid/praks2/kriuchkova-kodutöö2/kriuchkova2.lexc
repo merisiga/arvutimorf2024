@@ -1,0 +1,139 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaasõna
+ 
++Sg
++Pl
+
++Nom ! Nimetav
++Gen ! Omastav
++Part ! Osastav
++Ill ! Sisseütlev
++Ine ! Seesütlev
++Ela ! Seestütlev
++All ! Alaleütlev
++Ade ! Alalütlev
++Abl ! Alaltütlev
++Trl ! Saav
++Ter ! Rajav
++Ess ! Olev
++Abe ! Ilmaütlev
++Com ! Kaasaütlev
+
++gi_ki
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1 ! g või null
+B1 ! b või null
+D1 ! d või null
+S1 ! s või null
+
+T2 ! t või d
+
+TT1 ! tt või t
+KK1 ! kk või k
+PP1 ! pp või p
+
+LEXICON Root
+
+Sofia+S:Sofia tüüp_sofia ;     ! leksikaalne pool : pindesitus
+Hiir+S:Hiir tüüp_hiir ;
+Tartu+S:Tartu tüüp_sofia ;
+Suur+A:Suur tüüp_hiir ;
+tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+pett+S:peTT1 tüüp_pett ;       ! tt -> t
+käsi+S: käS1 tüüp_käsi ;      ! s -> 0
+vesi+S: veS1 tüüp_käsi ;
+tugi+S: tuG1 tüüp_tugi ;      ! u -> 0 g -> 0
+prügi+S: prügi tüüp_prügi ;
+nimi+S: nim tüüp_tugi ;      
+paat+S: paaT2 tüüp_paat;      ! t -> d
+
+LEXICON tüüp_sofia
+	+Sg+Nom: # gi_ki ;
+		:%> sg_gen ;
+	+Sg+Part:%>t gi_ki ;             
+      	+Pl:%>te semkäänded ; 
+	+Pl+Part:%>sid gi_ki ;
+
+LEXICON tüüp_hiir
+	+Sg+Nom: # gi_ki ;
+		:%>e  sg_gen ;
+	+Sg+Part:%>t gi_ki ;
+		+Pl:%>te semkäänded ;
+	+Pl+Part:%>i  gi_ki ;
+
+LEXICON tüüp_tuba
+    +Sg+Nom: # gi_ki ;
+    	:%{NA%} sg_gen ;
+    +Sg+Part: gi_ki ;
+    	+Pl:%>de semkäänded ;
+    +Pl+Part:%>sid gi_ki ;
+
+LEXICON tüüp_pett
+	+Sg+Nom: # gi_ki ;
+		:%{NA%}i sg_gen ;
+	+Sg+Part:%>i gi_ki ;
+		+Pl:%>ide semkäänded ;
+	+Pl+Part:%>e gi_ki ;
+
+LEXICON tüüp_käsi
+	+Sg+Nom:%>i gi_ki ;
+		:%{NA%}%>e sg_gen ;
+	+Sg+Part:%{NA%}%>tt gi_ki ;
+		+Pl:%{NA%}%>te semkäänded ;
+	+Pl+Part:%>i gi_ki ;
+
+LEXICON tüüp_tugi
+	+Sg+Nom:%>i gi_ki ;
+		:%{NA%}%>e sg_gen ;
+	+Sg+Part:%>e gi_ki ;
+		+Pl:%>ede semkäänded ;
+	+Pl+Part:%>esid gi_ki ;
+
+LEXICON tüüp_prügi
+	+Sg+Nom: # gi_ki ;
+		: sg_gen ;
+	+Sg+Part: gi_ki ;
+		+Pl:%>de semkäänded ;
+	+Pl+Part:%>sid gi_ki ;
+
+LEXICON tüüp_paat
+	+Sg+Nom: # gi_ki ;
+		:%{NA%}%>i sg_gen ;
+	+Sg+Part:%>i gi_ki ;
+		+Pl:%>ide semkäänded ;
+	+Pl+Part:%>e gi_ki ;
+
+LEXICON sg_gen                    ! leksikon kõigi muutuste puhul, mis nõuavad genitiivi
+	+Sg+Gen: gi_ki ;
+	       +Sg: semkäänded ; 
+	+Pl+Nom:%>d gi_ki ;
+
+LEXICON semkäänded
+	+Gen: gi_ki ;
+	+Ill:%>sse gi_ki ;
+	+Ine:%>s gi_ki ;
+	+Ela:%>st gi_ki ;
+	+All:%>le gi_ki ;
+	+Ade:%>l gi_ki ;
+	+Abl:%>lt gi_ki ;
+	+Trl:%>ks gi_ki ;
+	+Ter:%>ni gi_ki ;
+	+Ess:%>na gi_ki ;
+	+Abe:%>ta gi_ki ;
+	+Com:%>ga gi_ki ;
+
+LEXICON gi_ki                      ! Leksikon sufiksite gi või ki lisamisek (vaikimisi gi)
+	+gi_ki: gi # ;
+	# ;  ! Kui gi või ki puudub     
