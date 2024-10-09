@@ -25,6 +25,7 @@ kontekstis V ja P, kusjuures V ja P on a-poolel
 
 ```bash
 a -> b || V _ P 
+```
 
 kontekstis V ja P, kusjuures V ja P on b-poolel
 
