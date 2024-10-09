@@ -8,12 +8,14 @@ lihtne asendus
 ```bash
 a -> b
 a <- b
+```
 
 lihtne võimalik asendus
 
 ```bash
 a (->) b
 a (<-) b
+```
 
 a ja b võivad olla sümboljadad
 
