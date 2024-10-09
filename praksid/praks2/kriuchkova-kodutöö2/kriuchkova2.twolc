@@ -87,7 +87,7 @@ u:o <=> _ :(B1:0 | D1:0 | G1:0 | S1:0)([Vowel] | #)%{NA%}: ;
 
 "gi -> ki"
 
-g:k <=> [VoicelessConsonant] _ i # ;    
+g:k <=> [VoicelessConsonant]%>: _ i # ;    
 
 ! kui sufiksile eelneb hääletu konsonant, siis g muutub k-ks
   
