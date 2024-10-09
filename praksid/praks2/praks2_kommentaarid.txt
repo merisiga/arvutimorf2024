@@ -1,5 +1,5 @@
 
-Maris 3 p
+Maris 4 p.
 
 Kas teha nii, et pole erimärke produktiivse häälikuteisenduse (õigemini täheteisenduse) jaoks ?
 
@@ -34,16 +34,17 @@ kuidas tegin teistele run.sh failid:
 cat ../maris-kodutöö2/run.sh | sed 's/maris/kriuchkova/g' > run.sh
 
 
-Sofia
+Sofia 1 p.
 
 cat out.txt | grep '#'
 
+kahtlane reegel:
 
 "gi -> ki"
 
 g:k <=> [VoicelessConsonant] _ i # ;    
 
-lesginka -> leskinka
+tekiks lesginka -> leskinka
 
 ---------
 võiks teha nii:
@@ -52,7 +53,7 @@ LEXICON gi_ki                      ! Leksikon sufiksite gi või ki lisamisek (va
         # ;  ! Kui gi või ki puudub  
 
 twol reegel:        
-g:k <=> [VoicelessConsonant] %>: _ i # ;    
+g:k <=> [VoicelessConsonant] %>: _ i .#. ;    
 
 ------
 defineerite uue sümboli tt
@@ -60,7 +61,8 @@ defineerite uue sümboli tt
  TT1:tt ! pett
  TT1:t ! peti
 
-Veskimäe
+------------------
+Veskimäe 1 p.
 
 twol reegel paneb vastavusse kaks mitmetähelist sümbolit, aga need on defineerimata
 
