@@ -1,4 +1,4 @@
-﻿# kava
+# kava
 
 1. Sättida paika muundurite tegemise ja kasutamise tarkvara
 2. git
@@ -106,6 +106,11 @@ git config --global user.email "õige@meili.aadress"
 git config --global user.name "õige nimi"
 ```
 (lihtsalt et me teised ka teaksime, kes on reposse muutusi teinud).
+
+Et git ei teisendaks failinimede näitamisel täpitähti kaheksandkoodideks (tähestik asemel näitab t\303\244hestik), tee
+```bash
+git config --global core.quotePath false
+```
 
 Tavaline tööprotsess (oma kataloogis) on järgmine:
 
