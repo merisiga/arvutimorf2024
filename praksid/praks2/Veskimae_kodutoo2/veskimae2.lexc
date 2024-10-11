@@ -53,7 +53,7 @@ Tartu+S: Tartu tüüp_annika ;
 kett+S: keTT1 tüüp_kett ;
 luba+S: luB1a tüüp_luba ;
 riik+S: riiK1 tüüp_riik ;
-süsi+S: süS1i tüüp_süsi ;
+süsi+S: süS1 tüüp_süsi ;
 vesi+S: veS1 tüüp_vesi ;
 
 LEXICON tüüp_annika
@@ -86,10 +86,10 @@ LEXICON tüüp_riik
 +Pl+Part:%>e gi_ki_liide ;
 
 LEXICON tüüp_süsi
- +Sg+Nom: # gi_ki_liide ;
-        :%{NA%} sg_gen_jt ;
-+Sg+Part:%>tt # ;
-     +Pl:%>te semkäänded ;
+ +Sg+Nom:%>i gi_ki_liide ;
+        :%{NA%}%>e sg_gen_jt ;
++Sg+Part:%{NA%}%>tt gi_ki_liide ;
+     +Pl:%{NA%}%>te semkäänded ;
 +Pl+Part:%>d gi_ki_liide ;
 
 LEXICON tüüp_vesi

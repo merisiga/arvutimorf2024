@@ -60,28 +60,28 @@ nimi+S: nim tüüp_tugi ;
 paat+S: paaT2 tüüp_paat;      ! t -> d
 
 LEXICON tüüp_sofia
-	+Sg+Nom: # gi_ki ;
+	+Sg+Nom: gi_ki ;
 		:%> sg_gen ;
 	+Sg+Part:%>t gi_ki ;             
       	+Pl:%>te semkäänded ; 
 	+Pl+Part:%>sid gi_ki ;
 
 LEXICON tüüp_hiir
-	+Sg+Nom: # gi_ki ;
+	+Sg+Nom: gi_ki ;
 		:%>e  sg_gen ;
 	+Sg+Part:%>t gi_ki ;
 		+Pl:%>te semkäänded ;
 	+Pl+Part:%>i  gi_ki ;
 
 LEXICON tüüp_tuba
-    +Sg+Nom: # gi_ki ;
+    +Sg+Nom: gi_ki ;
     	:%{NA%} sg_gen ;
     +Sg+Part: gi_ki ;
     	+Pl:%>de semkäänded ;
     +Pl+Part:%>sid gi_ki ;
 
 LEXICON tüüp_pett
-	+Sg+Nom: # gi_ki ;
+	+Sg+Nom: gi_ki ;
 		:%{NA%}i sg_gen ;
 	+Sg+Part:%>i gi_ki ;
 		+Pl:%>ide semkäänded ;
@@ -102,14 +102,14 @@ LEXICON tüüp_tugi
 	+Pl+Part:%>esid gi_ki ;
 
 LEXICON tüüp_prügi
-	+Sg+Nom: # gi_ki ;
+	+Sg+Nom: gi_ki ;
 		: sg_gen ;
 	+Sg+Part: gi_ki ;
 		+Pl:%>de semkäänded ;
 	+Pl+Part:%>sid gi_ki ;
 
 LEXICON tüüp_paat
-	+Sg+Nom: # gi_ki ;
+	+Sg+Nom: gi_ki ;
 		:%{NA%}%>i sg_gen ;
 	+Sg+Part:%>i gi_ki ;
 		+Pl:%>ide semkäänded ;
@@ -135,5 +135,5 @@ LEXICON semkäänded
 	+Com:%>ga gi_ki ;
 
 LEXICON gi_ki                      ! Leksikon sufiksite gi või ki lisamisek (vaikimisi gi)
-	+gi_ki: gi # ;
+	+gi_ki:%>gi # ;
 	# ;  ! Kui gi või ki puudub     
