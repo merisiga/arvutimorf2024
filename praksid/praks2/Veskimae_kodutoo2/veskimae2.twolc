@@ -87,10 +87,10 @@ Vx:Vy  <=>  [.#. | Consonant] :Vowel B1:0    _   ;
 
 "Konsonandi kadumisel ü madaldub ö-ks"
 
-ü:ö  <=>  [.#. | Consonant]    _   S1:0 :Vowel ;
+ü:ö  <=>  [.#. | Consonant]    _   S1:0 %{NA%}:0 [%>:0] :Vowel ;
 
-! lexical: s ü S1 i {NA}
-! surface: s ö  0 e  0
+! lexical: s ü S1 {NA} > e
+! surface: s ö  0 0    0
 
 
 "Nõrgas astmes vahel k muutub g-ks"
