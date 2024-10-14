@@ -19,14 +19,16 @@ A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
  D1:0 ! rea
  S1:s ! süsi
  S1:0 ! söe
+ 
  T2:t ! paat
  T2:d ! paadi
- TT1:tt ! pett
- TT1:t ! peti
- PP1:pp
- PP1:p
- KK1:kk
- KK1:k
+ 
+ T3:t ! pett
+ T3:0 ! peti
+ P3:p
+ P3:0
+ K3:k
+ K3:0
 ; 
 
 Sets
@@ -46,15 +48,13 @@ Rules
 
 !
 
-"Kaashäälikute astmevaheldus: kk, pp, tt → k, p, t"
+"Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
 
-Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
-    where Cx in ( KK1 PP1 TT1 )
-          Cy in ( k p t )
-    matched ;
-
-! lexical: p e TT1 {NA}
-! surface: p e t  i 
+Cx:Cy  <=> Cz _ %{NA%}: ([Vowel]* | #) ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( K3 P3 T3 ) 
+           Cy in (  0  0  0 )
+           Cz in (  k  p  t )
+     matched ;
 
 "Nõrgas astmes vahel gbds kaob"
 
@@ -87,7 +87,7 @@ u:o <=> _ :(B1:0 | D1:0 | G1:0 | S1:0)([Vowel] | #)%{NA%}: ;
 
 "gi -> ki"
 
-g:k <=> [VoicelessConsonant]%>: _ i # ;    
+g:k <=> ([VoicelessConsonant]| T3:t | P3:p | K3:k)%>: _ i # ;    
 
 ! kui sufiksile eelneb hääletu konsonant, siis g muutub k-ks
   

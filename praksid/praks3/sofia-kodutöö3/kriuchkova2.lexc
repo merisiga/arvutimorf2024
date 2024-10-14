@@ -44,12 +44,14 @@ T3 ! tt või t
 K3 ! kk või k
 P3 ! pp või p
 
+E1 ! e või null
+
 LEXICON Root
 
 Sofia+S:Sofia tüüp_sofia ;     ! leksikaalne pool : pindesitus
-Hiir+S:Hiir tüüp_hiir ;
+hiir+S:hiir tüüp_hiir ;
 Tartu+S:Tartu tüüp_sofia ;
-Suur+A:Suur tüüp_hiir ;
+suur+A:suur tüüp_hiir ;
 tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
 pett+S:petT3 tüüp_pett ;       ! tt -> t
 käsi+S: käS1 tüüp_käsi ;      ! s -> 0
@@ -58,6 +60,8 @@ tugi+S: tuG1 tüüp_tugi ;      ! u -> 0 g -> 0
 prügi+S: prügi tüüp_prügi ;
 nimi+S: nim tüüp_tugi ;      
 paat+S: paaT2 tüüp_paat;      ! t -> d
+siga+S: siG1a tüüp_tuba;
+kohver+S: kohvE1r tüüp_kohver;  ! e -> 0
 
 LEXICON tüüp_sofia
 	+Sg+Nom:%> gi_ki ;
@@ -114,6 +118,13 @@ LEXICON tüüp_paat
 	+Sg+Part:%>i gi_ki ;
 		+Pl:%>ide semkäänded ;
 	+Pl+Part:%>e gi_ki ;
+
+LEXICON tüüp_kohver
+	+Sg+Nom:%> gi_ki ;
+		:%{NA%}%>i sg_gen ;
+	+Sg+Part:%{NA%}%>it gi_ki ;
+		+Pl:%{NA%}%>ite semkäänded ;
+	+Pl+Part:%{NA%}%>eid gi_ki ;
 
 LEXICON sg_gen                    ! leksikon kõigi muutuste puhul, mis nõuavad genitiivi
 	+Sg+Gen:%> gi_ki ;
