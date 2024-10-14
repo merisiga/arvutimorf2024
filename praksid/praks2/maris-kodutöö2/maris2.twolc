@@ -71,7 +71,7 @@ Cx:Cy  <=> _ :Vowel* %{NA%}: ;         ! võib-olla võiks kontekst olla ka: <=>
 "u madaldub o-ks"
 
 u:o  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
-          [.#. | Consonant]    _   G1:0 %{NA%}:0 [%>:0] :Vowel ;
+          [.#. | Consonant]    _   G1:0 %{NA%}:0 %>:0 :Vowel ;
 
 ! lexical: s u G1 u {NA}
 ! surface: s o  0 o  0  
@@ -88,7 +88,7 @@ i:e  <=>  [.#. | Consonant]    _   D1:0 :Vowel ;
 
 "ü madaldub ö-ks"
 
-ü:ö  <=>  [.#. | Consonant]    _   S1:0  %{NA%}:0 [%>:0] :Vowel ;
+ü:ö  <=>  [.#. | Consonant]    _   S1:0  %{NA%}:0 %>:0 :Vowel ;
 
 ! lexical: s ü S1 {NA} > e
 ! surface: s ö 0  0    0 e
@@ -97,10 +97,9 @@ i:e  <=>  [.#. | Consonant]    _   D1:0 :Vowel ;
 
 "Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
 
-Cx:Cy  <=> Cz _ %{NA%}:0 ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+Cx:0  <=> Cy _ %{NA%}:0 ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
      where Cx in ( K1 P1 T1 ) 
-           Cy in (  0  0  0 )
-           Cz in (  k  p  t )
+           Cy in (  k  p  t )
      matched ;
 
 "Nõrgeneva astmevahelduse korral k->g, p->b, t->d"
