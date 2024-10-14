@@ -1,0 +1,4 @@
+define teisenda [s (->) x || .#. _] .o. [ d (->) t || .#. r i _ a] .o. [ä b (->) b ä || .#. k _];
+read regex  @"maris2_fono.hfst" .o. teisenda
+save maris4_paranda.hfst
+quit
