@@ -1,0 +1,3 @@
+Pärast seda, kui olin oma koodi paar korda muutnud ja tulemusi vaadanud, sain aru, et ta üritas esmalt teha morfoloogilist analüüsi ja juba seejärel rakendada minu parandusi. Ja see on hämmastav, sest siis ma lõin täiendava skripti, mis tooks sõnad väiksemaks ja see töötab adekvaatselt. 
+
+Hetkel ei saa ma tegelikult aru, kuidas koodis kõigepealt parandusi teha. Ainus võimalus, mida ma olen leidnud, on lisada ekslikud vormid juba leksikonisse, kuid see ei ole mõttekas.

@@ -1,0 +1,6 @@
+# parandused sõna keskuses
+
+define parandamine [ ?* -> "gi" || "s" _ "a" ] .o. [ ?* -> "hv" || "ko" _ "er" ];
+
+
+regex  parandamine;
