@@ -47,10 +47,10 @@ rida+N:riD1a tüüp_ema ;
 süsi+N:süS1 tüüp_käsi ;
 vokk+N:vokK1 tüüp_täpp ;
 kurk+N:kurK2 tüüp_täpp ;
-tugi+S:tuG1 tüüp_tugi ;
-prügi+S:prügi tüüp_ema ;
-nimi+S:nim tüüp_tugi ;      
-paat+S:paaT2 tüüp_täpp; 
+tugi+N:tuG1 tüüp_tugi ;
+prügi+N:prügi tüüp_ema ;
+nimi+N:nim tüüp_tugi ;      
+paat+N:paaT2 tüüp_täpp; 
 
 LEXICON tüüp_ema
   +Sg+Nom: gi_lopp ;
@@ -99,7 +99,7 @@ LEXICON gi_lopp
   
 
 LEXICON semkäänded
-
+    +Gen: gi_lopp ;
     +Ill:%>sse gi_lopp ;
     +In:%>s gi_lopp ;
     +El:%>st gi_lopp ;
