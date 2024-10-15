@@ -1,0 +1,3 @@
+Minu teisendused ei toimi, või õigemini, toimub ainult sõna "kett" puhul, mil parandab selle valeks, st k muudab g-ks.
+Aga teisi teisendusi ei rakendata...
+
