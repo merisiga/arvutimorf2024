@@ -28,7 +28,7 @@ Kodutöö: vigase ortograafia modelleerimine
 09.10
 Praktika: lexc.
 Tuletuse kirjeld. lexc-formaadis
-Kodutöö: 10 tuletusliidet lexc formaadis
+Kodutöö: 4 tuletusliidet lexc formaadis
 
 16.10
 Praktika: xfst.
