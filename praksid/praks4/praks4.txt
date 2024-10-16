@@ -1,0 +1,61 @@
+
+-----------------
+
+tähtsad asjad xfst puhul
+
+sümbolite vahel PEAB OLEMA tühik!
+see on teisiti kui lexc puhul!
+
+[k a s s] on neli sümbolit
+[kass] on üks sümbol
+hea stiil ühe sümboli kirjutamiseks:  "kass"  või "+kass" või midagi muud, nii et tulemus paistaks selgelt teistsugune kui kass
+
+[{kass}] on neli sümbolit
+
+? tähistab suvalist sümbolit
+0 tähistab tühistringi e. epsiloni
+sulud (), pluss + ja Kleene-i tärn * on sama tähendusega mis regulaaravaldisteski
+
+?* tähistab kõikvõimalikke stringe, k.a. tühistring
+\a tähendab mitte sümbol a
+~a tähendab mitte hulk a, s.t. [?* & ~a], s.t. [?* - a], s.t. kõik stringid, v.a. need, mis on hulgas a
+a - b tähendab [a & ~b]
+
+--------
+probleem:
+tuletusliide liitub käändevormile, aga tuleks arvestada ka sõnaliiki
+
+näiteks omadussõna kesk- ja ülivõrre, määrsõnatuletus -lt
+lexc failis võiksid need tuletised näha välja nii:
+
+  +Der/m+A+Comp:%>m tüüp_vidin ;
+    +Der/lt+Adv:%>lt # ;
+
+ja asuda ainsuse omastavaga samas jätkuleksikonis, umbes nii (gi-liidet siin ei arvestata):
+
+        +Sg+Gen: # ;
+  +Der/m+A+Comp:%>m tüüp_vidin ;
+    +Der/lt+Adv:%>lt # ;
+
+... aga kuidas teha nii, et need liited liituksid ainult omadussõnale ?
+
+vaata naide4.lexc           <-- NB! lisada mitmemärgilised sümbolid, mida tuletuses kasut.!
+blokeeri_tuletus.xfscript   <-- filtrid
+build4.sh
+
+NB! naide4.lexc on osaliselt puudulik/vigane! ta ei võimalda luua sõnavormi kenamalt, mis oleks tuletis sõnast kenam
+
+kodutöö
+
+lisada oma muundurisse tuletus: +Der/m, +Der/lt ja lisaks ülivõrre  +Der/im, omadussõna moodustamiseks nimisõnast +Der/lik
+s.t. muuta lexc faili ja teha enda jaoks õige xfscript fail, mis sobimatud välja filtreerib
+
+üks asi, mida veel võiks välja filtreerida, on sobimatud sõnad oma tuletuse jaoks, 
+nt pikk keskvõrre on pikem, mitte pikam nagu vaikimisi tuletusereegel annaks
+
+s.t umbes midagi sellist
+define pahadsõnad [[{pikk} | {kõva}] "+A" ?*]
+ 
+
+
+

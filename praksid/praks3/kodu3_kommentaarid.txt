@@ -1,0 +1,48 @@
+millele peaks alati mõtlema:
+
+kui teha kompositsioon muundur1 .o. muundur2
+siis millised muundurite pooled on "vastamisi" ja seega kaovad ära ning millised on "ääres" ja seega jäävad alles?
+kumb pool on muunduri ülemine, kumb alumine? kumb leksikaalne, kumb pind- ehk sõnavormi pool? 
+
+
+Maris 4 p.
+
+miks kirjutasite veateisenduse skripti nii hoolikalt kontekstitingimused?
+kas proovisite ilma nendeta ja leidsite, et midagi läheb viltu?
+
+kas seletaksite oma kimbatust ümberpööramisega, illustreerides seda muunduri joonisega?
+
+----------
+Sofia 2 p.
+
+gi ja ki ei ole õigesti tehtud - nt kohvriki (peaks olema kohvrigi)
+oletan, et asjakohane twol-reegel on vigane
+minu meelest jätate twol failis tühikuid panemata ja tulemuseks on mitmemärgilised sümbolid, 
+mida te tegelikult ei tahtnud defineerida ja mis muudavad reeglid teistsuguseks kui te ise arvate
+
+parandamise skriptist ei saa ma üldse aru, mida ta peaks tegema...
+
+----------
+Annika 2 p.
+teisendusest töötab ainult k (->) g
+
+teisendus on selline:
+define teisenda [k (->) g || .#. _] .o. [l l (->) l || .#. r a n t _] .o. [i s ü (->) ü s i || .#. s _] .o. [t (->) d || .#. _];
+
+leksikon on selline:
+
+Annika+S: Annika tüüp_annika ;
+Randla+S: Randla tüüp_annika ;
+Tartu+S: Tartu tüüp_annika ;
+kett+S: keTT1 tüüp_kett ;
+luba+S: luB1a tüüp_luba ;
+riik+S: riiK1 tüüp_riik ;
+süsi+S: süS1 tüüp_süsi ;
+vesi+S: veS1 tüüp_vesi ;
+
+küsimus: kas sõnavormide hulgas on üldse selliseid, mille puhul teisenduse kontekstitingimused oleksid täidetud?
+
+vaadake oma teisenduse vasemat ja paremat poolt
+
+
+
