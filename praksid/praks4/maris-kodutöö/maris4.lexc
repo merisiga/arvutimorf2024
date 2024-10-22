@@ -57,7 +57,7 @@ tugi+N:tuG1 tüüp_tugi ;
 prügi+N:prügi tüüp_ema ;
 nimi+N:nim tüüp_tugi ;      
 paat+N:paaT2 tüüp_täpp;
-kena+A:kena tüüp_ema ;
+kena+A:ken tüüp_kena ;
 
 
 LEXICON tüüp_ema
@@ -66,6 +66,14 @@ LEXICON tüüp_ema
   +Sg+Part:%> gi_lopp ;            
   +Pl:%>de semkäänded ;
   +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_kena
+  +Sg+Nom:%>a gi_lopp ;
+  :%{NA%}%>a sg_gen_jt ;
+  +Sg+Part:%>a gi_lopp ;            
+  +Pl:%>ade semkäänded ;
+  +Pl+Part:%>asid gi_lopp ;
+  +Der/im+A+Super:%>im tüüp_vidin ;
 
 LEXICON tüüp_vidin
   +Sg+Nom: gi_lopp ;
