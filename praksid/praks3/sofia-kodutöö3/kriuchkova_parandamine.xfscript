@@ -1,6 +1,7 @@
 # parandused sõna keskuses
 
-define parandamine [ ?* -> "gi" || "s" _ "a" ] .o. [ ?* -> "hv" || "ko" _ "er" ];
+define parandamine [ ?* -> [h v] || [k o] _ [e r] ] .o. [ ? -> o || k _ [h v e r] ] .o.
+	      [ ? -> r || [k o h v e ] _ ] .o. [ ?* -> [i g] || s _ a ] .o. 
+	      [ ? -> s || _ [i g a] ] .o. [ ? -> a || [s i g] _ ];
 
-
-regex  parandamine;
+regex parandamine;
