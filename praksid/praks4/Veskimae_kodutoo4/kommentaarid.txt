@@ -1,1 +1,10 @@
-Mul läheb veel natukene aega skripti failiga, kuna näitab paari errorit. Proovin leida vea ülesse! 
+Mul läheb veel natukene aega skripti failiga, kuna näitab paari errorit. Proovin leida vea ülesse!
+lexc-faili vea leidsin üles, aga nüüd on juba uus probleem... 
+
+cat veskimae4_fono2_skript4.hfst | hfst-fst2strings
+hfst-fst2strings: Transducer is cyclic. Use one or more of these options: -n, -N, -r, -l, -L, -c
+
+Ma ei tea, kuidas neid tsükleid eemaldada või kus mul viga on, et need tsüklid tekivad, sest tulemus oli ka selline:
+kena+A+Der/im+A+Superl+Der/im+A+Superl+Der/im+A+Superl+Pl+Nom:kenaimimimd
+kena+A+Der/im+A+Superl+Der/im+A+Superl+Der/im+A+Superl+Pl+Nom+gi_ki_liide:kenaimimimdki
+kena+A+Der/im+A+Superl+Der/im+A+Superl+Der/im+A+Superl+Pl+Gen:kenaimimimte
