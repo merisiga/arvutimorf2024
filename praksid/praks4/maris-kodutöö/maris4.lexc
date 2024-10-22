@@ -22,8 +22,11 @@ Multichar_Symbols
 
 ! tuletus
 +Der/m
++Der/im
 +Der/lt
++Der/lik
 +Comp             ! komparatiiv
++Super            ! Superlatiiv
 
 %>                ! morfeemi piir
 %{NA%}            ! nõrk aste
@@ -120,6 +123,7 @@ LEXICON sg_gen_jt
   +Pl+Nom:%>d gi_lopp ;
   +Der/m+A+Comp:%>m tüüp_vidin ;
   +Der/lt+Adv:%>lt gi_lopp ;
+  +Der/lik+A:%>lik gi_lopp ;
   
 
 LEXICON gi_lopp

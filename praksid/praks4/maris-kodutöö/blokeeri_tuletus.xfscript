@@ -2,7 +2,7 @@
 
 # defineeri pahad rajad
 
-define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/lt" ?*];
+define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/lt" ?*] | [~[?* "+N"] "+Der/lik" ?*];
 
 # sama tuletust mitu korda ei luba
 
