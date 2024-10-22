@@ -10,6 +10,15 @@ define Eriregel [ [{pikk} | {halb} | {halv} | {hell} | {hull} |
 			       {virk} | {õrn} | {lai} | {kuri} | {soe} |
 				   {tühi} | {vali} | {nõder} | {paha}] "+A+Der/m" ?*]
 
+Ma ei kasutanud lihtsalt: define Eriregel [ [{pikk} | {halb} | {halv} | {hell} | {hull} |
+				  {julm} | {jäik} | {kehv} | {kuib} | {kurn} |
+				   {kuum} | {kõhn} | {külm} | {laisk} | {must} |
+				   {märg} | {nõrk} | {ränk} | {tark} | {tuim} |
+			       {virk} | {õrn} | {lai} | {kuri} | {soe} |
+				   {tühi} | {vali} | {nõder} | {paha}] "+A" ?*]
+
+sest sellisel juhul eemaldatakse sõna täielikult leksikonist, mitte ainult võrdlusastmeid.
+
 Siiani ei filtreeri see selliseid sõnu nagu hea pikk jne.
 
 Samuti tuleb lisada twolc faili reegel, et eemaldada vokaal superlatiivis mõnes sõnas (suur - suurim).
