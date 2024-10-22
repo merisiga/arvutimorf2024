@@ -33,8 +33,8 @@ Kodutöö: 4 tuletusliidet lexc formaadis
 16.10
 Praktika: xfst.
 Muundurite kombineerimine;
-filtrid: plurale tantum, sõnatuletus
-Kodutöö: tuletusliidete kombinatoorika piiramine
+filtrid: paarissõnad
+Kodutöö: kombinatoorika piiramine
 
 23.10
 Praktika: xfst.
