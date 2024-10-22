@@ -11,4 +11,3 @@ printf "source blokeeri_tuletus.xfscript\n\
         save veskimae4_fono2_skript4.hfst\n\
         quit\n" | hfst-xfst
 
-

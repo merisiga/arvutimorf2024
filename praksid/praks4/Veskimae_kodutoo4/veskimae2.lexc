@@ -63,7 +63,7 @@ luba+S: luB1a tüüp_luba ;
 riik+S: riiK1 tüüp_riik ;
 süsi+S: süS1 tüüp_süsi ;
 vesi+S: veS1 tüüp_vesi ;
-kena+A: kena tüüp_kena ;
+kena+A: ken tüüp_kena ;
 suur+A: suur tüüp_suur ;
 
 LEXICON tüüp_annika
@@ -72,7 +72,7 @@ LEXICON tüüp_annika
 	:%> sg_gen_jt ;
 +Sg+Part:%>t gi_ki_liide ;
      +Pl:%>te semkäänded ;
-+Pl+Part:%>id ;
++Pl+Part:%>id gi_ki_liide ;
 
 LEXICON tüüp_suur
  +Sg+Nom:%> gi_ki_liide ;
@@ -82,22 +82,11 @@ LEXICON tüüp_suur
 +Pl+Part:%>sid gi_ki_liide ;
 
 LEXICON tüüp_kena
-+Sg+Nom:%> gi_ki_liide ;
-:%{NA%}%> sg_gen_jt ;
-+Sg+Part:%> gi_ki_liide ;
-+Pl:%>de semkäänded ;
-+Pl+Part:%>sid gi_ki_liide ;
-+Der/im+A+Superl:%>im tüüp_vidin ;
-
-LEXICON tüüp_vidin 
-+Sg+Nom: ;
-:a 2C ;
-
-LEXICON 2C
-: sg_gen_jt ;
-+Sg+Part:%>t gi_ki_liide ;
-+Pl:%>te semkäänded ;
-+Pl+Part:%>id gi_ki_liide ;
+         +Sg+Nom:%>a gi_ki_liide ;
+                :%{NA%}%>a sg_gen_jt ;
+        +Sg+Part:%>a gi_ki_liide ;
+             +Pl:%>ade semkäänded ;
+        +Pl+Part:%>asid gi_ki_liide ;
 
 LEXICON tüüp_kett 
  +Sg+Nom: gi_ki_liide ;
