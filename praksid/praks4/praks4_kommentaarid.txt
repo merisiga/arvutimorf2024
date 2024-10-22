@@ -1,0 +1,38 @@
+Maris 2 p
+
+miks olete teinud nii, et lik-liitelised justkui ei käändugi? s.t. pole olemas vorme käbiliku, käbilikku ???
+
+define PahadSonad oleks võinud ka blokeeri_tuletus.xfscripti sisse jääda, sest teie define HeadRajad jätab ta välja ja lõplikusse muundurisse seda ei panda
+
+Annika 2 p.
+
+sama tuletusliite korduva rakendamise keelamiseks:
+vt. blokeeri_tuletus.xfscript ja tee analoogiliselt sellega, kuidas on seal PahaKordus
+
+sõna suur on lexc failis vist täiesti valesti kirjeldatud:
+suur+A+Sg+Gen	suur
+suur+A+Pl+Part	suursid
+
+lik-liitelised justkui ei käändugi?
+
+
+Sofia 2 p.
+
+kenaim...
+kas kenim või kenaim või on mõlemad ok?
+
+veider:
+kohver+S+Sg+Ill:kohvr{NA}isse
+kohver+S+Sg+Ill:kohvrisse
+
+pett+S+Sg+Gen:petti        (peaks olema peti) ma arvan, et twolc reegel ei tööta
+
+lik-liide on kenasti käänduvaks muudetud
+
+       +Der/im+Comp+Sg+Nom:%>im gi_ki ;               ! natuke kahtlev, sest mi
+tte alati ülivõrre vorm on omastavast (nt uus - uusim)
+
+vaata blokeerimis-skriptist, seal on vihje, et võib blokeerida ka üksikuid sõnatüvesid
+
+miks on eraldi muuttüüp sg_gen_omadussonad ? filtri mõte peaks ju olema, et sellist muuttüüpi ei peaks olema?
+
