@@ -1,0 +1,141 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+! 
+
+ G1:g ! lagi
+ G1:0 ! lae
+ B1:b ! tuba
+ B1:0 ! toa
+ D1:d ! rida
+ D1:0 ! rea
+ S1:s ! süsi
+ S1:0 ! söe
+ 
+ T2:t ! paat
+ T2:d ! paadi
+ 
+ T3:t ! pett
+ T3:0 ! peti
+ P3:p
+ P3:0
+ K3:k ! pikk
+ K3:0 ! pika
+ 
+ E1:e ! kohver
+ E1:0 ! kohvri
+; 
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+VoicelessConsonant = g b d k p t s š h f
+		     G B D K P T S Š H F ;
+
+Definitions
+
+Rules
+
+!
+
+"Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
+
+Cx:Cy  <=> Cz _ %{NA%} ( Vowel* | # ) ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( K3 P3 T3 ) 
+           Cy in (  0  0  0 )
+           Cz in (  k  p  t )
+     matched ;
+
+"Nõrgas astmes vahel gbds kaob"
+
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;  
+    where Cx in (  G1 B1 D1 S1)
+          Cy in (  0  0  0  0)
+    matched ;
+
+! lexical: t u B1 a 
+! surface: t o 0 a   
+
+"Nõrgas astmes vahel t muutb d-ks"
+
+Cx:Cy  <=> _ :Vowel* %{NA%}:;  
+    where Cx in (  T2)
+          Cy in (  d)
+    matched ;
+
+! lexical: p a a T2 
+! surface: p a a d  
+
+"Nõrgas astmes vahel e kaob"
+
+Cx:Cy  <=> _ :Consonant* %{NA%}: ;  
+    where Cx in ( E1 )
+          Cy in ( 0 )
+    matched ;
+
+! lexical: k o h v E1 r {NA}
+! surface: k o h v 0  r  0
+
+"Konsonandi kadumisel u madaldub o-ks"
+
+u:o <=> _ :(B1:0 | D1:0 | G1:0 | S1:0)([Vowel] | #)%{NA%}: ;   
+
+! ([Vowel] | #) tehti seetõttu, et sõnas tugi ei lõppe morfeem tuG1 vokaaliga
+
+! lexical: t u B1 a {NA}
+! surface: t o 0  a  0  
+
+"Konsonandi kadumisel i madaldub e-ks"
+
+i:e <=> _ :(B1:0 | D1:0 | G1:0 | S1:0)([Vowel] | #) %{NA%}: ;   
+
+! ([Vowel] | #) tehti seetõttu, et sõnas tugi ei lõppe morfeem tuG1 vokaaliga
+
+! lexical: s i G1 a {NA}
+! surface: s e 0  a  0  
+
+"gi -> ki"
+
+g:k <=> [VoicelessConsonant] %>: _ i # ;    
+
+! kui sufiksile eelneb hääletu konsonant, siis g muutub k-ks
+  
+! lexical: k a s gi
+! surface: k a s ki
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

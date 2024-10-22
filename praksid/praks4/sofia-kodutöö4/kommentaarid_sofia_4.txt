@@ -1,0 +1,33 @@
+
+Proovisin kasutada järgmist reeglit, kuid see annab pärast kompileerimist tühja stringi:
+
+# Keskvõrde erireegel (kehtib osaliselt): kui omastava käände kuju lõpp on –a või –u, siis võib keskvõrde lõpp olla –em, nt pikk (pika) → pikem, paks (paksu) → paksem.
+
+define Eriregel [ [{pikk} | {halb} | {halv} | {hell} | {hull} |
+				  {julm} | {jäik} | {kehv} | {kuib} | {kurn} |
+				   {kuum} | {kõhn} | {külm} | {laisk} | {must} |
+				   {märg} | {nõrk} | {ränk} | {tark} | {tuim} |
+			       {virk} | {õrn} | {lai} | {kuri} | {soe} |
+				   {tühi} | {vali} | {nõder} | {paha}] "+A+Der/m" ?*]
+
+Siiani ei filtreeri see selliseid sõnu nagu hea pikk jne.
+
+Samuti tuleb lisada twolc faili reegel, et eemaldada vokaal superlatiivis mõnes sõnas (suur - suurim).
+
+Ma parandasin ka veaparanduskoodi, see parandab nüüd sõnu siga ja kohver. Kuid kompilaator on väga aeglane, kui ma proovisin teha seda nii, et vead parandatakse kõikides sõnades leksikonis, siis võis kood töötada kauem kui tund aega.
+
+Mul on nüüd ka kaks varianti ( nt toa ja toa {NA}), mis esinevad nõrgas astmes. Twolc failis on mingi viga, parandan seda praegu. (Ma ei saanud seda enne parandada, sest viga ilmus alles nüüd ja enne seda töötas kood hästi.)
+
+Nt
+
+(mlcondaenv) sofiakriuchkova@Air-Sofia-3 ~/A/p/p/sofia-kodutöö3> echo 'koffer+S+Pl+Nom+gi_ki' | hfst-lookup kriuchkova_parandamine.hfst 
+hfst-lookup: warning: It is not possible to perform fast lookups with OpenFST, std arc, tropical semiring format automata.
+Using HFST basic transducer format and performing slow lookups
+> koffer+S+Pl+Nom+gi_ki	kohvridki	0,000000
+koffer+S+Pl+Nom+gi_ki	kohvr{NA}idki	0,000000
+koffer+S+Pl+Nom+gi_ki	kohvridki	0,000000
+koffer+S+Pl+Nom+gi_ki	kohvr{NA}idki	0,000000
+koffer+S+Pl+Nom+gi_ki	kohvridki	0,000000
+koffer+S+Pl+Nom+gi_ki	kohvr{NA}idki	0,000000
+
+Samuti oleks tore ühendada veaparandus ja blokeeringufail (olen seda proovinud, see ei tööta veel).
