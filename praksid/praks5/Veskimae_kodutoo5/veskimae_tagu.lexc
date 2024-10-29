@@ -1,0 +1,6 @@
+! paarissõna tagumine osa
+
+
+LEXICON Root
+sada+S:sada tüüp_sada ;
+kümmend+S:küm tüüp_kümmend ;

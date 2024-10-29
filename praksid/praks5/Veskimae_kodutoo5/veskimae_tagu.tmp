@@ -1,0 +1,100 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaassõna
+
++Sg
++Pl
+
++Nom ! Nimetav
++Gen ! Omastav
++Part ! Osastav
++Ill ! Sisseütlev
++Ine ! Seesütlev
++Ela ! Seestütlev
++All ! Alaleütlev
++Ade ! Alalütlev
++Abl ! Alaltütlev
++Trl ! Saav
++Ter ! Rajav
++Ess ! Olev
++Abe ! Ilmaütlev
++Com ! Kaasaütlev
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+
+KK1		! kk või k
+PP1		! pp või p
+TT1		! tt või t
+
+K1		! k või g
+B1		! b või null
+T1		! t või d
+S1		! s või null
+G1		! g või null
+! paarissõna tagumine osa
+
+
+LEXICON Root
+sada+S:sada tüüp_sada ;
+kümmend+S:küm tüüp_kümmend ;
+LEXICON tüüp_viis
+  +Sg+Nom:%>s ;
+         :%>e ; 
+  +Sg+Part:%>t ;             
+      +Pl:%>e ; 
+ +Pl+Part:%>e ;
+
+LEXICON tüüp_paar
+  +Sg+Nom: # ;
+         :i 2C ;
+
+LEXICON tüüp_sada
+   +Sg+Nom: # ;
+	  :%{NA%} sg_gen_jt ; 
+  +Sg+Part: # ;
+   +Pl+Gen:%>de ;
+       +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid ;
+
+LEXICON tüüp_kümmend
+  +Sg+Nom:%>end ;
+         :%>ne sg_gen_jt ; 
+ +Sg+Part:%>et ;             
+      +Pl:%>nete semkäänded ; 
+  +Pl+Part:%>neid ;
+
+LEXICON sg_gen_jt
+  +Sg+Gen: # ;
+      +Sg: semkäänded ;
+  +Pl+Nom:%>d ;
+
+LEXICON 2C
+	: sg_gen_jt ; 
++Sg+Part: # ;
+ +Pl+Gen:%>de ;
+     +Pl:%>de semkäänded ;
++Pl+Part:%>sid ;
+
+LEXICON semkäänded
+    +Gen: # ;
+    +Ill: %>sse ;
+    +Ine: %>s ;
+    +Ela: %>st ;
+    +All: %>le ;
+    +Ade: %>l ;
+    +Abl: %>lt ;
+    +Trl: %>ks ;
+    +Ter: %>ni ;
+    +Ess: %>na ;
+    +Abe: %>ta ;
+    +Com: %>ga ;
