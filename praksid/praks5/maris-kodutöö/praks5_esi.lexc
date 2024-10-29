@@ -1,0 +1,9 @@
+
+LEXICON Root
+
+! NB! sõnaliiki ei märgi!
+
+kolm:kolm tüüp_kolm ;     ! kolmsada, kolmkümmend
+paar:paar tüüp_paar ;     ! paarsada, paarkümmend
+
+
