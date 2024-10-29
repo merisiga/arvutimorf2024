@@ -68,7 +68,7 @@ i:e  <=>  :Consonant  _ %>: :i ;
 
 "sada muutub saja-ks "
 
-d:j  <=>  s a _ a %{NA%} ;
+d:j  <=>  s a _ a %{NA%}:0 ;
       
 ! lexical: s a d a %{NA%}
 ! surface: s a j a 0
