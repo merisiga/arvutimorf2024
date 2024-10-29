@@ -4,3 +4,6 @@ hfst-lexc praks5_esi.tmp > praks5_esi.hfst
 hfst-lexc: warning: Defaulting to OpenFst tropical type
 Root...2 tüüp_kolm...2 tüüp_paar...2 2C...5 tüüp_sada...6 tüüp_kümmend...6 sg_gen_jt...3 semkäänded...Warning: Sublexicons defined but not used
 tüüp_kümmend tüüp_sada 
+
+Sain aru... need on selle tagumise osa omad! 
+Viga oli hoopis build.sh failis oli paari filter mitte numeral filter.
