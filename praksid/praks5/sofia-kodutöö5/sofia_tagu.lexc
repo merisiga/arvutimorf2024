@@ -1,0 +1,9 @@
+! paarissõna tagumine osa
+
+
+
+LEXICON Root
+
+vend+S:ven tüüp_vend ;
+kümmend+N: kümm tüüp_kümmend;
+sada+N: sa tüüp_sada;
