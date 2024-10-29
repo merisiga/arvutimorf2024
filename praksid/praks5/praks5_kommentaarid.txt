@@ -1,0 +1,22 @@
+
+Maris: 2 p.
+
+paarkümmend+N+Sg+Par:paarikümnet  --> peaks olema paarikümmet
+see on lihtne viga lexc-s
+
+--------------
+Sofia: 2 p.
+
++Sg+Part vormid on puudu...
+kümmnete jms mmn 
+õde-vend mitmuse vormid on puudu, v.a. +Pl+Nom
+
+Sofia küsimused:
+1) Mul on probleeme numbrites oleva sidekriipsu eemaldamisega. On ilmselge, et me peame muutma muutujat Middle, kuid pärast selle muutmist lakkab kood töötamast.
+
+2) D muudatused sõnades vend ja sada on niivõrd ette nähtud lexc failis, et parem oleks need üle viia twolc'ile.
+
+3) Ma olen veidi segaduses nende sõnade käändumisega, loodan, et kõik on korras.
+
+
+

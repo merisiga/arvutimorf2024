@@ -27,7 +27,7 @@ kodutöö
 teha muundur, milles on vähemalt kaks sellist arvsõna, milles mõlemad pooled käänduvad
 nt. kakssada, paarkümmend 
 
-ideid saab skriptist numeral-filter.est.xfscript
+ideid saab skriptist numeral-filter.est.xfscript ja wordpair-filter.est.xfscript
 
 
 
