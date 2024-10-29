@@ -1,0 +1,10 @@
+hfst-lexc: warning: Defaulting to OpenFst tropical type
+Root...2 tüüp_viis...5 tüüp_paar...2 tüüp_sada...veskimae_esi.tmp:62.19: syntax error, unexpected ';', expecting LEXICON_NAME or ULSTRING: [near: ;']
+hfst-lexc: The file veskimae_esi.tmp did not compile cleanly.
+(if there are no error messages above, try -v or -d to get more info)
+hfst-lexc: warning: Defaulting to OpenFst tropical type
+Root...2 tüüp_viis...5 tüüp_paar...2 tüüp_sada...veskimae_tagu.tmp:62.19: syntax error, unexpected ';', expecting LEXICON_NAME or ULSTRING: [near: ;']
+hfst-lexc: The file veskimae_tagu.tmp did not compile cleanly.
+
+Miks lexc-failis näiteks siin +Sg+Nom: # ; peab lisama mingi märgi enne semikoolonit, miks see ei võiks olla lihtsalt 
++Sg+Nom: ;?

@@ -1,0 +1,3 @@
+paar-sada+S+Sg+Gen:paari-saja
+paar-kümmend+S+Sg+Gen:paari-kümne
+paar-sada+S+Sg+Nom:paar-sada
