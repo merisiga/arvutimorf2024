@@ -1,0 +1,51 @@
+LEXICON tüüp_viis
+  +Sg+Nom:%>s ;
+         :%>e ; 
+  +Sg+Part:%>t ;             
+      +Pl:%>e ; 
+ +Pl+Part:%>e ;
+
+LEXICON tüüp_paar
+  +Sg+Nom: # ;
+         :i 2C ;
+
+LEXICON tüüp_sada
+   +Sg+Nom: # ;
+	  :%{NA%} sg_gen_jt ; 
+  +Sg+Part: # ;
+   +Pl+Gen:%>de ;
+       +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid ;
+
+LEXICON tüüp_kümmend
+  +Sg+Nom:%>end ;
+         :%>ne sg_gen_jt ; 
+ +Sg+Part:%>et ;             
+      +Pl:%>nete semkäänded ; 
+  +Pl+Part:%>neid ;
+
+LEXICON sg_gen_jt
+  +Sg+Gen: # ;
+      +Sg: semkäänded ;
+  +Pl+Nom:%>d ;
+
+LEXICON 2C
+	: sg_gen_jt ; 
++Sg+Part: # ;
+ +Pl+Gen:%>de ;
+     +Pl:%>de semkäänded ;
++Pl+Part:%>sid ;
+
+LEXICON semkäänded
+    +Gen: # ;
+    +Ill: %>sse ;
+    +Ine: %>s ;
+    +Ela: %>st ;
+    +All: %>le ;
+    +Ade: %>l ;
+    +Abl: %>lt ;
+    +Trl: %>ks ;
+    +Ter: %>ni ;
+    +Ess: %>na ;
+    +Abe: %>ta ;
+    +Com: %>ga ;
