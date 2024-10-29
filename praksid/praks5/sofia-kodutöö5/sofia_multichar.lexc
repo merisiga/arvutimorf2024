@@ -1,0 +1,42 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaasõna
+ 
++Sg
++Pl
+
++Sg
++Pl
++Nom    ! nimetav
++Gen    ! omastav
++Par    ! osastav
++Ill    ! sisseütlev
++Ine    ! seesütlev
++Ela    ! seestütlev
++All    ! alaleütlev
++Ade    ! alalütlev
++Abl    ! alaltütlev
++Tra    ! saav
++Ter    ! rajav
++Ess    ! olev
++Abe    ! ilmaütlev
++Kom    ! kaasaütlev
+
+
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+
+G1 ! g või null
+B1 ! b või null
+D1 ! d või null
+S1 ! s või null

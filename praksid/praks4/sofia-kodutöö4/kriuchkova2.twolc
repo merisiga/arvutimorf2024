@@ -40,10 +40,10 @@ Vowel = A E I O U Õ Ä Ö Ü Y
         a e i o u õ ä ö ü y ;
 
 Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
-            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X;
 
 VoicelessConsonant = g b d k p t s š h f
-		     G B D K P T S Š H F ;
+		     G B D K P T S Š H F T3 T2;
 
 Definitions
 
@@ -53,7 +53,7 @@ Rules
 
 "Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
 
-Cx:Cy  <=> Cz _ %{NA%} ( Vowel* | # ) ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+Cx:Cy  <=> Cz _ %{NA%}: ([Vowel*] | # ) ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
      where Cx in ( K3 P3 T3 ) 
            Cy in (  0  0  0 )
            Cz in (  k  p  t )
@@ -67,7 +67,7 @@ Cx:Cy  <=> _ :Vowel* %{NA%}: ;
     matched ;
 
 ! lexical: t u B1 a 
-! surface: t o 0 a   
+! surface: t o 0 a    
 
 "Nõrgas astmes vahel t muutb d-ks"
 
@@ -107,9 +107,13 @@ i:e <=> _ :(B1:0 | D1:0 | G1:0 | S1:0)([Vowel] | #) %{NA%}: ;
 ! lexical: s i G1 a {NA}
 ! surface: s e 0  a  0  
 
+"ülivõrre"
+
+Vowel:0 <=> :[Consonant]: i m # ;
+
 "gi -> ki"
 
-g:k <=> [VoicelessConsonant] %>: _ i # ;    
+g:k <=> :[VoicelessConsonant] %>: _ i # ;    
 
 ! kui sufiksile eelneb hääletu konsonant, siis g muutub k-ks
   

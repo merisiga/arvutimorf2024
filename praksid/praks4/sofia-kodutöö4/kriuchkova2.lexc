@@ -118,14 +118,14 @@ LEXICON tüüp_pett
 
 LEXICON tüüp_käsi
 	+Sg+Nom:%>i gi_ki ;
-		:%{NA%}%>e sg_gen ;
-	+Sg+Part:%{NA%}%>tt gi_ki ;
-		+Pl:%{NA%}%>te semkäänded ;
+		:%{NA%}e sg_gen ;
+	+Sg+Part:%{NA%}tt gi_ki ;
+		+Pl:%{NA%}te semkäänded ;
 	+Pl+Part:%>i gi_ki ;
 
 LEXICON tüüp_tugi
 	+Sg+Nom:%>i gi_ki ;
-		:%{NA%}%>e sg_gen ;
+		:%{NA%}e sg_gen ;
 	+Sg+Part:%>e gi_ki ;
 		+Pl:%>ede semkäänded ;
 	+Pl+Part:%>esid gi_ki ;
@@ -146,17 +146,17 @@ LEXICON tüüp_prügi
 
 LEXICON tüüp_paat
 	+Sg+Nom: gi_ki ;
-		:%{NA%}%>i sg_gen ;
+		:%{NA%}i sg_gen ;
 	+Sg+Part:%>i gi_ki ;
 		+Pl:%>ide semkäänded ;
 	+Pl+Part:%>e gi_ki ;
 
 LEXICON tüüp_kohver
 	+Sg+Nom: gi_ki ;
-		:%{NA%}%>i sg_gen ;
-	+Sg+Part:%{NA%}%>it gi_ki ;
-		+Pl:%{NA%}%>ite semkäänded ;
-	+Pl+Part:%{NA%}%>eid gi_ki ;
+		:%{NA%}i sg_gen ;
+	+Sg+Part:%{NA%}it gi_ki ;
+		+Pl:%{NA%}ite semkäänded ;
+	+Pl+Part:%{NA%}eid gi_ki ;
 
 LEXICON sg_gen                    ! leksikon kõigi muutuste puhul, mis nõuavad genitiivi
 	+Sg+Gen: gi_ki ;

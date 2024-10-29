@@ -1,0 +1,67 @@
+
+
+LEXICON tüüp_õde
+  +Sg+Nom: # ;
+      :%{NA%} sg_gen_jt ; 
+  +Sg+Part: # ;             
+      +Pl:%>de semkäänded ; 
+  +Pl+Part:%>sid # ;
+
+LEXICON tüüp_paar
+  +Sg+Nom: # ;
+         :%>i sg_gen_es ; 
+  +Sg+Part:%>i # ;             
+      +Pl:%>i # ; 
+  +Pl+Part:%>i # ;
+  
+LEXICON tüüp_kuus
+  +Sg+Nom:%>s # ;
+         :%>e sg_gen_es ; 
+  +Sg+Part:%>t # ;             
+      +Pl:%>e # ; 
+  +Pl+Part:%>e # ;
+  
+LEXICON tüüp_vend
+  +Sg+Nom:%>d # ;
+         :%>na sg_gen_jt ; 
+  +Sg+Part:%>da # ;             
+      +Pl:%>dade semkäänded ; 
+  +Pl+Part:%>dasid # ;
+
+LEXICON tüüp_kümmend
+  +Sg+Nom:%>end # ;
+         :%>ne sg_gen_jt ; 
+  +Sg+Part:%>et # ;             
+      +Pl:%>nete semkäänded ; 
+  +Pl+Part:%>neid # ;
+
+LEXICON tüüp_sada
+  +Sg+Nom:%>da # ;
+         :%>ja sg_gen_jt ; 
+  +Sg+Part:%>dat # ;             
+      +Pl:%>dade semkäänded ; 
+  +Pl+Part:%>du # ;
+
+LEXICON sg_gen_jt
+        +Sg+Gen: # ;
+            +Sg: semkäänded ;
+        +Pl+Nom:%>d # ;
+
+LEXICON sg_gen_es
+        +Sg+Gen: # ;
+            +Sg: # ;
+        +Pl+Nom: # ;
+
+LEXICON semkäänded
+
+    +Ill:%>sse # ;
+    +Ine:%>s # ;
+    +Ela:%>st # ;
+    +All:%>le # ;
+    +Ade:%>l # ;
+    +Abl:%>lt # ;
+    +Tra:%>ks # ;
+    +Ter:%>ni # ;
+    +Ess:%>na # ;
+    +Abe:%>ta # ;
+    +Kom:%>ga # ;
