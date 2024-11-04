@@ -26,7 +26,7 @@ LEXICON tüüp_sada
 LEXICON tüüp_kümmend
     +Sg+Nom:mend # ;
     :ne sg_gen_jt ; 
-    +Sg+Par:net # ;
+    +Sg+Par:met # ;
     +Pl+Gen:ne%>te # ;
     +Pl:ne%>te semkäänded ;
     +Pl+Par:ne%>id # ;
