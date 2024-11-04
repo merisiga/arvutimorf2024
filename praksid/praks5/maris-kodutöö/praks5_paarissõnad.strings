@@ -1,5 +1,6 @@
 kolmkümmend+N+Sg+Nom:kolmkümmend
 kolmsada+N+Sg+Nom:kolmsada
+kolmkümmend+N+Sg+Par:kolmekümmet
 kolmkümmend+N+Sg+Gen:kolmekümne
 kolmkümmend+N+Sg+Ill:kolmekümnesse
 kolmkümmend+N+Sg+Ine:kolmekümnes
@@ -11,7 +12,6 @@ kolmkümmend+N+Sg+Tra:kolmekümneks
 kolmkümmend+N+Sg+Ess:kolmekümnena
 kolmkümmend+N+Sg+Abe:kolmekümneta
 kolmkümmend+N+Pl+Nom:kolmekümned
-kolmkümmend+N+Sg+Par:kolmekümnet
 kolmkümmend+N+Pl+Ill:kolmekümnetesse
 kolmkümmend+N+Pl+Ine:kolmekümnetes
 kolmkümmend+N+Pl+Ela:kolmekümnetest
@@ -47,6 +47,7 @@ kolmsada+N+Sg+Ess:kolmesajana
 kolmsada+N+Sg+Abe:kolmesajata
 kolmsada+N+Pl+Nom:kolmesajad
 paarkümmend+N+Sg+Nom:paarkümmend
+paarkümmend+N+Sg+Par:paarikümmet
 paarkümmend+N+Sg+Gen:paarikümne
 paarkümmend+N+Sg+Ill:paarikümnesse
 paarkümmend+N+Sg+Ine:paarikümnes
@@ -57,7 +58,6 @@ paarkümmend+N+Sg+Abl:paarikümnelt
 paarkümmend+N+Sg+Tra:paarikümneks
 paarkümmend+N+Sg+Ess:paarikümnena
 paarkümmend+N+Sg+Abe:paarikümneta
-paarkümmend+N+Sg+Par:paarikümnet
 paarsada+N+Sg+Par:paarisada
 paarsada+N+Sg+Gen:paarisaja
 paarsada+N+Sg+Ill:paarisajasse
