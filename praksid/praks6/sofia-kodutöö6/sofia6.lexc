@@ -1,0 +1,167 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaasõna
+ 
++Sg
++Pl
+
++Nom ! Nimetav
++Gen ! Omastav
++Part ! Osastav
++Ill ! Sisseütlev
++Ine ! Seesütlev
++Ela ! Seestütlev
++All ! Alaleütlev
++Ade ! Alalütlev
++Abl ! Alaltütlev
++Trl ! Saav
++Ter ! Rajav
++Ess ! Olev
++Abe ! Ilmaütlev
++Com ! Kaasaütlev
+
++gi_ki
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1 ! g või null
+B1 ! b või null
+D1 ! d või null
+S1 ! s või null
+
+T2 ! t või d
+
+T3 ! tt või t
+K3 ! kk või k
+P3 ! pp või p
+
+E1 ! e või null
+
+
+LEXICON Root
+
+	Nimisonad_maa ;
+	Nimisonad_abi ;
+	Nimisonad_õpi ;
+	Nimisonad_elu ;
+	Nimisonad_isa ;
+	Nimisonad_suur ;
+    Omadussonad ;
+
+LEXICON Omadussonad
+	
+	maa:maa Nimisonad_maa ;
+	maa+S:maa tüüp_maa ;
+	abi:abi Nimisonad_abi ;
+	abi+S:abi tüüp_abi ;
+	opi:õpi Nimisonad_õpi ;
+	elu:elu Nimisonad_elu ;
+	elu+S:elu tüüp_abi ;
+	isa:isa Nimisonad_isa ;
+	isa+S:isa tüüp_abi ;
+	suur:suur Nimisonad_suur ;
+	suur+A:suur tüüp_hiir ;
+
+LEXICON Nimisonad_maa
+
+	vesi+S:veS1 tüüp_käsi ; 
+	siga+S: siG1a tüüp_tuba;
+
+LEXICON Nimisonad_abi
+	
+	käsi+S: käS1 tüüp_käsi ;      ! s -> 0
+
+LEXICON Nimisonad_õpi
+ 	
+ 	tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+ 	
+LEXICON Nimisonad_elu 
+
+	vesi+S:veS1 tüüp_käsi ; 
+	tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+
+LEXICON Nimisonad_isa 
+
+	nimi+S: nim tüüp_nimi ;  
+
+LEXICON Nimisonad_suur 
+	
+	vesi+S:veS1 tüüp_käsi ; 
+	tuba+S:tuB1a tüüp_tuba ; 
+	nimi+S: nim tüüp_nimi ; 
+	
+LEXICON tüüp_tuba
+    +Sg+Nom: gi_ki ;
+    	:%{NA%} sg_gen ;
+    +Sg+Part: gi_ki ;
+    	+Pl:%>de semkäänded ;
+    +Pl+Part:%>sid gi_ki ;
+
+LEXICON tüüp_käsi
+	+Sg+Nom:%>i gi_ki ;
+		:%{NA%}e sg_gen ;
+	+Sg+Part:%{NA%}tt gi_ki ;
+		+Pl:%{NA%}te semkäänded ;
+	+Pl+Part:%>i gi_ki ;
+
+LEXICON tüüp_nimi
+	+Sg+Nom:%>i gi_ki ;
+		:%>e sg_gen ;
+	+Sg+Part:%>e gi_ki ;
+		+Pl:%>ede semkäänded ;
+	+Pl+Part:%>esid gi_ki ;
+
+LEXICON tüüp_abi
+	+Sg+Nom: gi_ki ;
+		: sg_gen ;
+	+Sg+Part: gi_ki ;
+		+Pl:%>de semkäänded ;
+	+Pl+Part:%>sid gi_ki ;
+	
+LEXICON tüüp_maa
+	+Sg+Nom: gi_ki ;
+		: sg_gen ;
+	+Sg+Part:%>d gi_ki ;
+		+Pl:%>de semkäänded ;
+	+Pl+Part:%>sid gi_ki ;
+
+LEXICON tüüp_hiir
+	+Sg+Nom: gi_ki ;
+		:%>e  sg_gen ;
+	+Sg+Part:%>t gi_ki ;
+		+Pl:%>te semkäänded ;
+	+Pl+Part:%>i  gi_ki ;
+
+
+LEXICON sg_gen                    ! leksikon kõigi muutuste puhul, mis nõuavad genitiivi
+	+Sg+Gen: gi_ki ;
+	       +Sg: semkäänded ; 
+	+Pl+Nom:%>d gi_ki ;
+
+
+LEXICON semkäänded
+	+Gen: gi_ki ;
+	+Ill:%>sse gi_ki ;
+	+Ine:%>s gi_ki ;
+	+Ela:%>st gi_ki ;
+	+All:%>le gi_ki ;
+	+Ade:%>l gi_ki ;
+	+Abl:%>lt gi_ki ;
+	+Trl:%>ks gi_ki ;
+	+Ter:%>ni gi_ki ;
+	+Ess:%>na gi_ki ;
+	+Abe:%>ta gi_ki ;
+	+Com:%>ga gi_ki ;
+
+LEXICON gi_ki                      ! Leksikon sufiksite gi või ki lisamisek (vaikimisi gi)
+	+gi_ki:%>gi # ;
+	# ;  ! Kui gi või ki puudub     

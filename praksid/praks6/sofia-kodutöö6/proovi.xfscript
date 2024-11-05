@@ -1,0 +1,30 @@
+define PartOfSpeech ["+S" | "+A"] ;
+define Number ["+Sg" | "+Pl" ];
+define CaseGram ["+Nom" | "+Gen" | "+Par" ]; 
+define CaseOblique ["+Ill" | "+Ine" | "+Ela" | "+All" | "+Ade" | "+Abl" | "+Tra" | "+Trm" | "+Ess" | "+Abe" | "+Com"] ;
+define Case [ CaseGram | CaseOblique ] ;
+
+define Esi [ {maa} | {abi} | {õpi} | {elu} | {isa} | {suur} ] ;
+define Taga [ {vesi} | {siga} | {käsi} | {tuba} | {nimi} ] ;
+
+define Pairs [ [{maa}{vesi}] |
+               [{maa}{siga}] |
+               [{abi}{käsi}] |
+               [{õpi}{tuba}] |
+               [{elu}{vesi}] |
+               [{elu}{tuba}] |
+               [{isa}{nimi}] |
+               [{suur}{vesi}] |
+               [{suur}{tuba}] |
+               [{suur}{nimi}] 
+             ] ;
+
+define WordPairs [?* Pairs ?*] ;
+
+define BadPairs $[Esi PartOfSpeech Number Case Taga] ;
+
+define GoodPairs [WordPairs & ~[BadPairs]] ;
+
+regex GoodPairs ;
+
+
