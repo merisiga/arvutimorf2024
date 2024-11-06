@@ -1,4 +1,8 @@
 
+Ootan uut (või üldse) esimest versiooni järgmiseks praktikumiks.
+
+Maris ja Annika ei esitanud.
+
 Sofia: 1 p.
 
 Liitsõnade tegemine lexc kaudu.
