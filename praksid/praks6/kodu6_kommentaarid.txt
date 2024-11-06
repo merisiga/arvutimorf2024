@@ -1,0 +1,15 @@
+
+Sofia: 1 p.
+
+Liitsõnade tegemine lexc kaudu.
+
+Ma näen, et olete defineerinud liitsõnad üksiksõnade kaupa. 
+Nii, et on üksikud sõnad nagu suur, maa, vesi jne, millele järgneb jätkuleksikon.
+Kui proovida samal moel kirjeldada kogu liitsõnamoodustust, siis peaks olema sama palju jätkuleksikone kui on sõnu.
+
+Ma arvan, et õigem oleks ikkagi teha nii, et liitsõna järelosist kajastav jätkuleksikon ei järgne esiosise tüvele (nagu teil praegu on tehtud), vaid esiosise käändele (nimetav või omastav). Sel moel oleks kirjeldus natukene realistlikum ja ülevaatlikum, kuid samas tuleks sel juhul tegelda mingit märkide eemaldamisega lõplikust pindvormist (nt. +N +Sg tuleks eemaldada).
+
+Liitsõnade tegemine xfst filtri kaudu.
+
+Ei õnnestunud muundurit tekitada, sest filter on ilmselt liiga piirav, s.t. filtreerib kõik jadad välja. 
+Ma arvan, et püüate liiga täpselt järgida varasemaid näidis-filtreid.
