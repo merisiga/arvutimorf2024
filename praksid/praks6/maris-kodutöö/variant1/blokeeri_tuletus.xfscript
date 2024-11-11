@@ -2,7 +2,10 @@ define NSg ["+N" "+Sg" ["+Gen"|"+Nom"]] ;
 define NPl ["+N" "+Pl" "+Gen"] ;
 define ASg ["+A" "+Sg" "+Nom"] ;
 
-define HeadRajad [ ?* [ NSg | NPl | ASg] \["+Rohk"]* "+N" ?*];
+define Nimisonad [[ NSg | NPl | ASg] \["+Rohk"]* "+N"] ;
+define Omadussonad [ [NSg | ASg]  \["+Rohk"]* "+A"] ;
+
+define HeadRajad [ ?* [Nimisonad|Omadussonad] ?*];
 
 regex HeadRajad ;
 

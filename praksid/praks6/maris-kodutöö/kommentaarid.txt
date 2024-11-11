@@ -1,0 +1,3 @@
+1. Variant 1 puhul ei õnnestunud scripti lisada liitsõnapiiri.
+2. Variant 2 jäigi liitsõnu genereerima. Help pakkus lahendusena -L, mis piirab sõnade pikkust, aga täpsest toimimisest ei saa aru. Vähemalt saab nimekirja, mis ei ole lõputu.
+3. Mulle meeldis rohkem variant 1, sest seal on lihtsam teha muudatusi (lisada filtreid jms). Teises variandis pidi iga sõnatüübi jaoks samu asju uuesti lisama. 
