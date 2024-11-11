@@ -1,0 +1,133 @@
+
+Multichar_Symbols
+
++N                ! Nimisõna
++A                ! Omadussõna
++Sg
++Pl
++Nom
++Gen
++Part
++Ill
++In
++El
++All              ! Alaleütlev
++Ad                 
++Abl
++Tr
++Term
++Es
++Abes
++Kom
++Rohk
+
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+B1                ! b või null
+D1                ! d või null
+S1                ! s või null
+K1
+K2
+P1
+P2
+T1
+T2
+GK
+
+
+LEXICON Root
+
+kati+N:kati tüüp_pere ;    ! leksikaalne pool : pindesitus
+karu+N:karu tüüp_ema ;
+võru+N:võru tüüp_ema ;
+käbi+N:käbi tüüp_ema ;
+täpp+N:täpP1 tüüp_täpp ;
+kott+N:kotT1 tüüp_täpp ;
+rida+N:riD1a tüüp_ema ;
+süsi+N:süS1 tüüp_käsi ;
+vokk+N:vokK1 tüüp_täpp ;
+kurk+N:kurK2 tüüp_täpp ;
+tugi+N:tuG1 tüüp_tugi ;
+prügi+N:prügi tüüp_ema ;
+nimi+N:nim tüüp_tugi ;      
+paat+N:paaT2 tüüp_täpp;
+kena+A:ken tüüp_kena ;
+
+
+LEXICON tüüp_ema
+  +Sg+Nom: gi_lopp ;
+  :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%> gi_lopp ;            
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_kena
+  +Sg+Nom:%>a gi_lopp ;
+  :%{NA%}%>a sg_gen_jt ;
+  +Sg+Part:%>a gi_lopp ;            
+  +Pl:%>ade semkäänded ;
+  +Pl+Part:%>asid gi_lopp ;
+
+
+LEXICON tüüp_pere
+  +Sg+Nom: gi_lopp ;
+  :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%>t gi_lopp ;            
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_täpp
+  +Sg+Nom: gi_lopp ;
+  :%{NA%}%>i sg_gen_jt ; 
+  +Sg+Part:%>i gi_lopp ;            
+  +Pl:%>ide semkäänded ;
+  +Pl+Part:%>isid gi_lopp ;
+
+LEXICON tüüp_käsi
+  +Sg+Nom:%>i gi_lopp ;
+  :%{NA%}%>e sg_gen_jt ;
+  +Sg+Part:{NA%}%>tt gi_lopp ;
+  +Pl:{NA%}%>te semkäänded ;
+  +Pl+Part:%>i gi_lopp ;
+
+LEXICON tüüp_tugi
+	+Sg+Nom:%>i gi_lopp ;
+	:%{NA%}%>e sg_gen_jt ;
+	+Sg+Part:%>e gi_lopp ;
+	+Pl:%>ede semkäänded ;
+	+Pl+Part:%>esid gi_lopp ;
+
+LEXICON 2C
+  : sg_gen_jt ; 
+  +Sg+Par:%>t gi_lopp ;
+  +Pl:%>te semkäänded ;
+  +Pl+Par:%>id gi_lopp ;
+
+LEXICON sg_gen_jt
+
+  +Sg+Gen: gi_lopp ;
+  +Sg: semkäänded ;
+  +Pl+Nom:%>d gi_lopp ;
+  
+
+LEXICON gi_lopp
+  +Rohk:%>GKi # ;
+  : # ;
+  
+
+LEXICON semkäänded
+    +Gen: gi_lopp ;
+    +Ill:%>sse gi_lopp ;
+    +In:%>s gi_lopp ;
+    +El:%>st gi_lopp ;
+    +All:%>le gi_lopp ;
+    +Ad:%>l gi_lopp ;
+    +Abl:%>lt gi_lopp ;
+    +Tr:%>ks gi_lopp ;
+    +Term:%>ni gi_lopp ;
+    +Es:%>na gi_lopp ;
+    +Abes:%>ta gi_lopp ;
+    +Kom:%>ga gi_lopp ;
