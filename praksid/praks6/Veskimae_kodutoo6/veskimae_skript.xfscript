@@ -1,0 +1,13 @@
+define NSg ["+N" "+Sg" "+Nom"] ;
+define NPl ["+N" "+Pl" "+Gen"] ;
+define ASg ["+A" "+Sg" "+Nom"] ;
+
+define Nimisonad [[ NSg | NPl | ASg] \["+gi_ki_liide"]* "+S"] ;
+define Omadussonad [ [NSg | ASg]  \["+gi_ki_liide"]* "+A"] ;
+
+define HeadRajad [ ?* Nimisonad ?*];
+
+regex HeadRajad ;
+
+
+
