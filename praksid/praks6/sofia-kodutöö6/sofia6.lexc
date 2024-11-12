@@ -33,6 +33,8 @@ Multichar_Symbols
 %>                ! morfeemi piir
 %{NA%}            ! nõrk aste
 
+%#                ! liitsõna piir
+
 G1 ! g või null
 B1 ! b või null
 D1 ! d või null
@@ -59,93 +61,100 @@ LEXICON Root
 
 LEXICON Omadussonad
 	
-	maa:maa Nimisonad_maa ;
-	maa+S:maa tüüp_maa ;
-	abi:abi Nimisonad_abi ;
-	abi+S:abi tüüp_abi ;
-	opi:õpi Nimisonad_õpi ;
-	elu:elu Nimisonad_elu ;
-	elu+S:elu tüüp_abi ;
-	isa:isa Nimisonad_isa ;
-	isa+S:isa tüüp_abi ;
-	suur:suur Nimisonad_suur ;
-	suur+A:suur tüüp_hiir ;
+	maa:maa tüüp_maa ;
+	abi:abi tüüp_abi ;
+	õpi:õpi Nimisonad_õpi ;
+	elu:elu tüüp_abi ;
+	isa:isa tüüp_abi ;
+	suur:suur tüüp_hiir ;
 
 LEXICON Nimisonad_maa
 
-	vesi+S:veS1 tüüp_käsi ; 
-	siga+S: siG1a tüüp_tuba;
+	vesi:veS1 tüüp_käsi ; 
+	siga:siG1a tüüp_tuba;
 
 LEXICON Nimisonad_abi
 	
-	käsi+S: käS1 tüüp_käsi ;      ! s -> 0
+	käsi:käS1 tüüp_käsi ;      ! s -> 0
 
 LEXICON Nimisonad_õpi
  	
- 	tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+ 	tuba:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
  	
 LEXICON Nimisonad_elu 
 
-	vesi+S:veS1 tüüp_käsi ; 
-	tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+	vesi:veS1 tüüp_käsi ; 
+	tuba:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
 
 LEXICON Nimisonad_isa 
 
-	nimi+S: nim tüüp_nimi ;  
+	nimi:nim tüüp_nimi ;  
 
 LEXICON Nimisonad_suur 
 	
-	vesi+S:veS1 tüüp_käsi ; 
-	tuba+S:tuB1a tüüp_tuba ; 
-	nimi+S: nim tüüp_nimi ; 
+	vesi:veS1 tüüp_käsi ; 
+	tuba:tuB1a tüüp_tuba ; 
+	nimi:nim tüüp_nimi ; 
 	
 LEXICON tüüp_tuba
-    +Sg+Nom: gi_ki ;
+    +S+Sg+Nom: gi_ki ;
     	:%{NA%} sg_gen ;
-    +Sg+Part: gi_ki ;
-    	+Pl:%>de semkäänded ;
-    +Pl+Part:%>sid gi_ki ;
+    +S+Sg+Part: gi_ki ;
+    	+S+Pl:%>de semkäänded ;
+    +S+Pl+Part:%>sid gi_ki ;
 
 LEXICON tüüp_käsi
-	+Sg+Nom:%>i gi_ki ;
+	+S+Sg+Nom:%>i gi_ki ;
 		:%{NA%}e sg_gen ;
-	+Sg+Part:%{NA%}tt gi_ki ;
-		+Pl:%{NA%}te semkäänded ;
-	+Pl+Part:%>i gi_ki ;
+	+S+Sg+Part:%{NA%}tt gi_ki ;
+		+S+Pl:%{NA%}te semkäänded ;
+	+S+Pl+Part:%>i gi_ki ;
 
 LEXICON tüüp_nimi
-	+Sg+Nom:%>i gi_ki ;
+	+S+Sg+Nom:%>i gi_ki ;
 		:%>e sg_gen ;
-	+Sg+Part:%>e gi_ki ;
-		+Pl:%>ede semkäänded ;
-	+Pl+Part:%>esid gi_ki ;
+	+S+Sg+Part:%>e gi_ki ;
+		+S+Pl:%>ede semkäänded ;
+	+S+Pl+Part:%>esid gi_ki ;
 
 LEXICON tüüp_abi
-	+Sg+Nom: gi_ki ;
+	+S+Sg+Nom%#: Nimisonad_abi ;
+	+S+Sg+Nom%#: Nimisonad_elu ;
+	+S+Sg+Nom%#: Nimisonad_isa ; 
+	+S+Sg+Nom: gi_ki ;
 		: sg_gen ;
-	+Sg+Part: gi_ki ;
-		+Pl:%>de semkäänded ;
-	+Pl+Part:%>sid gi_ki ;
+	+S+Sg+Part: gi_ki ;
+		+S+Pl:%>de semkäänded ;
+	+S+Pl+Part:%>sid gi_ki ;
 	
 LEXICON tüüp_maa
-	+Sg+Nom: gi_ki ;
+	+S+Sg+Nom%#: Nimisonad_maa ;
+	+S+Sg+Nom: gi_ki ;
 		: sg_gen ;
-	+Sg+Part:%>d gi_ki ;
-		+Pl:%>de semkäänded ;
-	+Pl+Part:%>sid gi_ki ;
+	+S+Sg+Part:%>d gi_ki ;
+		+S+Pl:%>de semkäänded ;
+	+S+Pl+Part:%>sid gi_ki ;
 
 LEXICON tüüp_hiir
-	+Sg+Nom: gi_ki ;
+	+A+Sg+Nom%#: Nimisonad_suur ;
+	+S+Sg+Nom: gi_ki ;
 		:%>e  sg_gen ;
-	+Sg+Part:%>t gi_ki ;
-		+Pl:%>te semkäänded ;
-	+Pl+Part:%>i  gi_ki ;
+	+S+Sg+Part:%>t gi_ki ;
+		+S+Pl:%>te semkäänded ;
+	+S+Pl+Part:%>i  gi_ki ;
+	+A+Sg+Nom: gi_ki ;
+	+A+Sg+Part:%>t gi_ki ;
+		+A+Pl:%>te semkäänded ;
+	+A+Pl+Part:%>i  gi_ki ;
 
 
 LEXICON sg_gen                    ! leksikon kõigi muutuste puhul, mis nõuavad genitiivi
-	+Sg+Gen: gi_ki ;
-	       +Sg: semkäänded ; 
-	+Pl+Nom:%>d gi_ki ;
+	+S+Sg+Gen: gi_ki ;
+	       +S+Sg: semkäänded ; 
+	+S+Pl+Nom:%>d gi_ki ;
+	+A+Sg+Gen: gi_ki ;
+	       +A+Sg: semkäänded ; 
+	+A+Pl+Nom:%>d gi_ki ;
 
 
 LEXICON semkäänded

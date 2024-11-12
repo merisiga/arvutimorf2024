@@ -1,2 +1,3 @@
-Esimesel meetodil muunduri luues tekkis mul probleem. Pärast kompileerimist oli mu lõplik muundur tühi. oli viga xfscript-failis, kuna hfst-fail töötas hästi. 
-Teise meetodi kasutamisel ei esinenud mul peaaegu mingeid probleeme. Ja kui ikka tekkisid, sain kiiresti aru, millega need võivad olla seotud ja lahendasin need ära. Seetõttu tundus see variant mulle lihtsam. Ma ei ütle, et see oli mugavam, sest lõpuks osutus mu lexc-fail väga pikaks. Võib-olla, kui mul poleks xfscript-faili kompileerimisega probleeme olnud, oleks mulle esimene variant rohkem meeldinud. Sest see on mugavam, kui erinevad failid vastutavad erinevate asjade eest ja midagi pole segatud.
+xfst: Tahtsin lisada morfeemide eraldamise märgi, kuid see ei tööta veel, et näidata morfideemide vahelisi piire
+
+Põhimõtteliselt meeldib mulle lexc-failiga töötamine rohkem, sest see on mugavam, kui ma leian kõik andmed ühest failist. Siiski on xfst-meetod mugavam, sest see on universaalsem. See lihtsustab tööd, kui on olemas palju kombinatsioone.
