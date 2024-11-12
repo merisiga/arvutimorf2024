@@ -9,15 +9,12 @@ hfst-fst2strings sofia6_fono.hfst > out_esimene.txt
 hfst-lexc sofia6_2.lexc > sofia6_2.hfst
 hfst-compose-intersect sofia6_2.hfst sofia_fono.compose.hfst > sofia6_fono_2.hfst
 
-printf "source proovi.xfscript\n\
+printf "define lihtsonamuundur @\"sofia6_fono_2.hfst\" \n\
+        define koiksonad [lihtsonamuundur lihtsonamuundur] \n\
+        source sofia_filter.xfscript\n\
         define fst\n\
-        read regex fst .o. @\"sofia6_fono_2.hfst\"\n\
-        save sofia_liitsõnad.hfst\n\
+        read regex fst .o. koiksonad \n\
+        save koik.hfst \n\
         quit\n" | hfst-xfst
 
-printf "source sofia_filter.xfscript\n\
-        define fst\n\
-        read regex fst .o. @\"sofia6_fono_2.hfst\"\n\
-        save sofia_liitsõnad.hfst\n\
-        quit\n" | hfst-xfst
-
+hfst-fst2strings koik.hfst > out_2.txt
