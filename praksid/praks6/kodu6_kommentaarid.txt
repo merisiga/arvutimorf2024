@@ -17,3 +17,37 @@ Liitsõnade tegemine xfst filtri kaudu.
 
 Ei õnnestunud muundurit tekitada, sest filter on ilmselt liiga piirav, s.t. filtreerib kõik jadad välja. 
 Ma arvan, et püüate liiga täpselt järgida varasemaid näidis-filtreid.
+
+-------------
+
+Teine praktikum samade ülesannetega
+
+Maris 3p
+
+Variant1 on liitsõnamoodustus xfst kaudu, variant2 lexc kaudu.
+Variant1 puhul lihtsõnu see muundur enam ära ei tunne.
+
+Muundurid pole päris korras, aga lisasin ühe punkti selle eest, et kasutate hfst-fst2strings väljundi piiramiseks lippu -L 200.
+Ma ise ei tulnud selle peale, et nii saaks teha; olen varem ise kuidagi teisiti läbi ajanud.
+
+Sofia 2 p
+
+Variant1 on liitsõnamoodustus lexc kaudu, variant2 xfst kaudu.
+Variant2 puhul sama problem mis Marisel xfst kaudu liitsõnade moodustamisel - lihtsõnu see muundur enam ära ei tunne.
+Põhjuski on vast sama - viis, kuidas lihtsõnade muundurid xfst-s kokku pannakse.
+Minu meelest on teil xfst kasutamisel ka liiga piirav filter - ta lubab liitsõnadeks ainult loendina ette antud sõnapaare, mitte kõiki sobiva sõnaklassi sõnu.
+
+
+Nii Maris kui Sofia:
+Võiks kasutada xfst-s järgmist võtet: define kõiksõnad [liitsõnamuundur | lihtsõnamuundur] ;
+(s.t. kõigi sõnade muundur on liitsõnade muunduri ja lihtsõnamuunduri ühend; kasutame siin konjunktsiooni ehk mittevälistavat või-d)
+
+Annika 1 p
+
+Mul oli raskusi arusaamisega, et milline muundur esindab lexc sisse kirjutatud liitsõnamoodustust ja milline xfst kaudu tehtut.
+Oleksite võinud kas oma .sh faili kirjutada kommentaarid, või nimetada .sh. .lexc või .hfst failid sobivalt. Siis oleks lihtsam aru saada, mis oli algne mõte.
+
+üks viis katsetamiseks:
+
+hfst-fst2strings -L 200 veskimae6.fono.hfst | less
+
