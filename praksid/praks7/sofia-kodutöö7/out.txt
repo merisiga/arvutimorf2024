@@ -1,0 +1,10 @@
+töö+S+Sg+Ess	tööna	0,000000
+
+keel+S+Pl+Part	keeli	0,000000
+
+mer+S+Sg+Trl+gi_ki	merekski	0,000000
+
+ema+S+Pl+Abe	emadeta	0,000000
+
+keel+S+Sg+Nom#pea+S+Sg+Ess	keelpeana	0,000000
+
