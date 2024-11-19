@@ -1,0 +1,6 @@
+rist+S+Pl+Abe	ristideta	0.000000
+
+kala+S+Sg+Ine	kalas	0.000000
+
+uni+S+Sg+Com	unega	0.000000
+
