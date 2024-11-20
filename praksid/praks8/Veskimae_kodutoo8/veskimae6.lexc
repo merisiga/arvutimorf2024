@@ -76,9 +76,9 @@ suur+A: suur tüüp_suur ;
 
 LEXICON Oletused
 
-< V C C "+S":0 > tüüp_kett "weight: 10 " ;        
+< [V C C] ::10 "+S":0 > tüüp_kett ;        
 < [C V C*] ::5 "+S":0 > tüüp_riik ;      
-< C C V V "+S":0 > tüüp_krae "weight: 10 ";        
+< [C C V V] ::10 "+S":0 > tüüp_krae ;        
 < V V C "+S":0 > tüüp_riik ;            
 < C V C V "+S":0 > tüüp_luba ;         
 
