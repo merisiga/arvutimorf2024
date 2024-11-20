@@ -1,0 +1,87 @@
+Maris 3 p
+
+katsetasin sõnaga, mis on sõnana leksikonis ja mis saab ka oletused:
+
+echo 'kotiga' | hfst-lookup maris7.ifst
+
+kotiga	kot+N+Sg+Kom	0,000000
+kotiga	koti+N+Sg+Kom	0,000000
+kotiga	kott+N+Sg+Kom	0,000000
+
+see on tüüpiline olukord: võimalikke analüüse on mitu
+
+oletuste leksikonis olevaid mustreid saaks teha täpsemaks, aga olemasolevadki annavad aimu, kuidas produktiivset morfoloogiat modelleerida
+
+näiteks võiks lisada mistahes mustri algusesse C*, sest ühegi sõna käänamine ei sõltu sellest, kas sõna algab kaashääliku või täishäälikuga
+
+Sofia 2 p.
+
+katsetamiseks vahetasin muunduril ülemise ja alumise poole:
+
+hfst-invert < sofia7_final.hfst > sofia7_final.ihfst
+
+1) siis proovisin sõnaga, mis on nii leksikonis kui oletamisega:
+
+echo 'maa' | hfst-lookup sofia7_final.ihfst 
+
+maa	maB1a+S+Sg+Gen	0,000000
+maa	maD1a+S+Sg+Gen	0,000000
+maa	maG1a+S+Sg+Gen	0,000000
+maa	maa+S+Sg+Gen	0,000000
+maa	maa+S+Sg+Nom	0,000000
+
+oletan, et viga on lexc reas.
+
+	< C V [B1 | G1 | D1] V "+S":0 > tüüp_tuba ;
+
+
+$ echo 'tuB1a+S+Sg+Nom' | hfst-lookup sofia7.hfst 
+
+> tuB1a+S+Sg+Nom	tuB1a	0,000000
+
+oletan, et vormis tuB1a on midagi sellist puudu, mida twolc reeglid arvestavad kontekstina (võib-olla %>)
+
+2) formaalselt on oletamine realiseeritud, aga pakutavad häälikumallid ja neile vastavad tüüpsõnad ei kajasta eesti käänamissüsteemi tõelisi seaduspärasusi.
+nimi, tuba ja hiir on erandlike käänamisviiside näited; 
+vastavad reeglipärased näited oleks: C*VCV - ema ; C*VVC - siil
+
+echo 'koole'  | hfst-lookup sofia7_final.ihfst 
+
+koole	koB1o+S+Sg+All	0,000000
+koole	koD1o+S+Sg+All	0,000000
+koole	koG1o+S+Sg+All	0,000000
+koole	koo+S+Sg+All	0,000000
+koole	kool+A+Sg+Gen	0,000000    
+koole	kool+S+Sg+Gen	0,000000  <-- võiks olla kooli
+koole	kuB1o+S+Sg+All	0,000000
+koole	kuD1o+S+Sg+All	0,000000
+koole	kuG1o+S+Sg+All	0,000000
+
+Loodetavasti paneb see mõtlema, et millised õigupoolest need reeglid on, mida me keelekasutuses järgime (hiir-hiire vs. siil-siili).
+
+Annika 1 p
+
+kumb kataloog on õige kodutöö? kas Veskimae_kodutoo7/ või Veskimae_kodutöö7/ ?
+oletan, et Veskimae_kodutöö7
+
+vahetasin muunduril ülemise ja alumise poole:
+
+hfst-invert < veskimae7.fono.hfst > veskimae7.fono.ihfst
+
+mulle tundub, et häälikumallid ei ole alati kooskõlas tüübiga:
+
+LEXICON Oletused
+
+< V C C "+S":0 > tüüp_uni ;        <-- häälikumall defineerib siia utt, äpp jts sõnad, aga käänamismall on uni...
+< C V C C "+S":0 > tüüp_riik ;      
+< C C V V "+S":0 > tüüp_riik ;     <-- häälikumall defineerib siia psii, troi jts sõnad, aga käänamismall on riik...  
+< V V C "+S":0 > tüüp_riik ;            
+< C V C V "+S":0 > tüüp_luba ;         
+
+alljärgnev näide on lingvistiliselt õige, aga ma ei näe läbi, kust tuleb aag+S+Sg+All
+echo 'aagile' | hfst-lookup veskimae7.fono.ihfst
+
+aagile	aag+S+Sg+All	0,000000
+aagile	aak+S+Sg+All	0,000000
+
+

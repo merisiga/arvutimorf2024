@@ -1,0 +1,64 @@
+praks8
+
+Kaalud leksikoni ja muundurisse
+
+On võimalik, et ühele pindvormile vastab mitu võimalikku leksikaalset kuju.
+Näiteks regulaarne vormihomonüümia:
+ema	ema+N+Sg+Nom
+ema	ema+N+Sg+Part
+ema	ema+N+Sg+Gen
+
+Intuitiivselt on usutav, et väljaspool lause konteksti on mõni neist vormidest eelistatum. Konkreetselt vast ainsuse nimetav kääne:
+ema	ema+N+Sg+Nom
+
+Vaikimisi eelistus on arvatavasti olemas ka juhul, kui eri sõnade eri käändevormid langevad kokku; kui sõna on analüüsitav nii lihtsõna kui liitsõnana või nii leksikonis olevana kui oletatavana.
+Nt. 
+mees mees+N+Sg+Nom
+mees mesi+N+Sg+In    
+
+emas	ema+N+Sg+In
+emas	emas+N+Sg+Nom            <-- oletatud
+
+hfst võimaldab määrata üleminekutele (s.t. sümbolpaaridele) kaale, et järjestada muunduri läbimise radu ja selle kaudu analüüsi/sünteesi variante.
+Väiksem kaal tähendab eelistatumat rada, s.t. suurem kaal justkui vajutab resultaadi allapoole.
+
+
+https://github.com/hfst/hfst/wiki/Weights
+
+lexc failis esitatakse kaale jutumärkide vahel ja võtmesõna weight: abil, näiteks:
+
+ahvatlev+A:ahvatlev MAGUS  "weight: 8 " ;
+[...9
+       +Sg+Gen: # "weight: 1 " ;
+
+-------------
+koduülesanne
+
+lisada oma muundurile kaalud
+liitsõnad võiksid olla suurema kaaluga kui lihtsõnad, nii et nt. laiust puhul analüüs oleks umbes
+laius+N+Sg+Par	10
+lai+A+Sg+Nom#uks+N+Sg+Par 100
+
+ka oletatud sõnad võiksid olla suurema kaaluda kui leksikonist tulenevad
+
+sisendi katsetamisel hfst-lookup-i abil võib kasutada parameetrit -b
+selle kaudu saab määrata, kui suurt kaalude erinevust me lubame parima ja teiste tulemuste vahel
+
+üks suvaline näide:
+
+echo 'laiust' | hfst-lookup analyser-gt-guess.hfst 
+laiust	laius+N+Sg+Par	10,000000
+laiust	laiune+A+Sg+Par	11,000000
+laiust	laid+N+Sg+Ela	12,000000
+laiust	laiu+Guess+N+Sg+Ela	303,000000
+laiust	laiust+Guess+N+Sg+Nom	310,000000
+laiust	laius+Guess+N+Sg+Par	312,000000
+
+echo 'laiust' | hfst-lookup -b 5 analyser-gt-guess.hfst 
+ laiust	laius+N+Sg+Par	10,000000
+laiust	laiune+A+Sg+Par	11,000000
+laiust	laid+N+Sg+Ela	12,000000
+
+echo 'laiust' | hfst-lookup -b 0 analyser-gt-guess.hfst 
+laiust	laius+N+Sg+Par	10,000000
+ 
