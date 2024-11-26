@@ -59,36 +59,36 @@ Oletused ;
 LEXICON Nimisonad
 
 Annika+S: Annika tüüp_annika "weight: 5 " ; 
-Randla+S: Randla tüüp_annika ;
-Tartu+S: Tartu tüüp_annika ;
-kett+S: keTT1 tüüp_kett ;
+Randla+S: Randla tüüp_annika "weight: 5 " ;
+Tartu+S: Tartu tüüp_annika "weight: 5 " ;
+kett+S: keTT1 tüüp_kett "weight: 5 " ;
 luba+S: luB1a tüüp_luba "weight: 5 ";
-riik+S: riiK1 tüüp_riik ;
-süsi+S: süS1 tüüp_süsi ;
-vesi+S: veS1 tüüp_vesi ;
-krae+S: krae tüüp_krae ;
+riik+S: riiK1 tüüp_riik "weight: 5 " ;
+süsi+S: süS1 tüüp_süsi "weight: 5 " ;
+vesi+S: veS1 tüüp_vesi "weight: 5 " ;
+krae+S: krae tüüp_krae "weight: 5 ";
 
 
 LEXICON Omadussonad
 
-kena+A: ken tüüp_kena ;
-suur+A: suur tüüp_suur ;
+kena+A: ken tüüp_kena "weight: 5 " ;
+suur+A: suur tüüp_suur "weight: 5 " ;
 
 LEXICON Oletused
 
 < [V C C] ::10 "+S":0 > tüüp_kett ;        
-< [C V C*] ::5 "+S":0 > tüüp_riik ;      
+< [C V C*] ::10 "+S":0 > tüüp_riik ;      
 < [C C V V] ::10 "+S":0 > tüüp_krae ;        
-< V V C "+S":0 > tüüp_riik ;            
-< C V C V "+S":0 > tüüp_luba ;         
-
+< V V C ::10 "+S":0 > tüüp_riik ;            
+< C V C V ::10 "+S":0 > tüüp_luba ;         
+< C V V C V C ::10 "+S":0 > tüüp_suur ; 
 
 
 LEXICON tüüp_annika
 
   +Sg+Nom: gi_ki_liide ;
-! +Sg+Nom%#: Nimisonad ;
-! +Sg+Nom%#: Omadussonad ;
+ +Sg+Nom%#: Nimisonad "weight: 20 " ;
+ +Sg+Nom%#: Omadussonad "weight: 20 " ;
 	 :%> sg_gen_jt ;
  +Sg+Part:%>t gi_ki_liide "weight: 1 ";
       +Pl:%>te semkäänded ;
@@ -96,81 +96,81 @@ LEXICON tüüp_annika
 
 LEXICON tüüp_suur
   +Sg+Nom:%> gi_ki_liide ;
-! +Sg+Nom%#: Nimisonad ;
-! +Sg+Nom%#: Omadussonad ;
+ +Sg+Nom%#: Nimisonad "weight: 20 ";
+ +Sg+Nom%#: Omadussonad "weight: 20 ";
 	 :%>e sg_gen_jt ;
- +Sg+Part:%>t gi_ki_liide ;
+ +Sg+Part:%>t gi_ki_liide "weight: 1 " ;
       +Pl:%>te semkäänded ;
  +Pl+Part:%>i gi_ki_liide ;
 
 LEXICON tüüp_kena
   +Sg+Nom:%>a gi_ki_liide ;
-! +Sg+Nom%#:%>a Nimisonad ;
-! +Sg+Nom%#:%>a Omadussonad ;
+ +Sg+Nom%#:%>a Nimisonad "weight: 20 ";
+ +Sg+Nom%#:%>a Omadussonad "weight: 20 ";
          :%{NA%}%>a sg_gen_jt ;
- +Sg+Part:%>a gi_ki_liide ;
+ +Sg+Part:%>a gi_ki_liide "weight: 1 ";
       +Pl:%>ade semkäänded ;
 +Pl+Part:%>asid gi_ki_liide ;
 
 LEXICON tüüp_kett 
   +Sg+Nom: gi_ki_liide ;
-! +Sg+Nom%#: Nimisonad ;
-! +Sg+Nom%#: Omadussonad ;
+ +Sg+Nom%#: Nimisonad "weight: 20 " ;
+ +Sg+Nom%#: Omadussonad "weight: 20 " ;
          :%{NA%}i sg_gen_jt ;
- +Sg+Part:%i gi_ki_liide ;
+ +Sg+Part:%i gi_ki_liide "weight: 1 ";
       +Pl:%>ide semkäänded ;
  +Pl+Part:%>e gi_ki_liide ;
 
 LEXICON tüüp_luba
   +Sg+Nom: gi_ki_liide ;
-! +Sg+Nom%#: Nimisonad ;
-! +Sg+Nom%#: Omadussonad ;
+ +Sg+Nom%#: Nimisonad "weight: 20 " ;
+ +Sg+Nom%#: Omadussonad "weight: 20 " ;
          :%{NA%} sg_gen_jt ;
- +Sg+Part: gi_ki_liide ;
+ +Sg+Part: gi_ki_liide "weight: 1 ";
       +Pl:%de semkäänded ;
  +Pl+Part:%sid gi_ki_liide ;
 
 LEXICON tüüp_riik
   +Sg+Nom: gi_ki_liide ;
-! +Sg+Nom%#: Nimisonad ;
-! +Sg+Nom%#: Omadussonad ;
+ +Sg+Nom%#: Nimisonad "weight: 20 " ;
+ +Sg+Nom%#: Omadussonad "weight: 20 " ;
          :%{NA%}%>i sg_gen_jt ;
- +Sg+Part:%>i gi_ki_liide ;
+ +Sg+Part:%>i gi_ki_liide "weight: 1 " ;
       +Pl:%>ide semkäänded ;
  +Pl+Part:%>e gi_ki_liide ;
 
 LEXICON tüüp_süsi
   +Sg+Nom:%>i gi_ki_liide ;
-! +Sg+Nom%#:%>i Nimisonad ;
-! +Sg+Nom%#:%>i Omadussonad ;
+ +Sg+Nom%#:%>i Nimisonad "weight: 20 " ;
+ +Sg+Nom%#:%>i Omadussonad "weight: 20 " ;
          :%{NA%}%>e sg_gen_jt ;
- +Sg+Part:%{NA%}%>tt gi_ki_liide ;
+ +Sg+Part:%{NA%}%>tt gi_ki_liide "weight: 1 " ;
       +Pl:%{NA%}%>te semkäänded ;
  +Pl+Part:%>i gi_ki_liide ;
 
 LEXICON tüüp_vesi
  +Sg+Nom:%>i gi_ki_liide ;
-! +Sg+Nom%#:%>i Nimisonad ;
-! +Sg+Nom%#:%>i Omadussonad ;
+ +Sg+Nom%#:%>i Nimisonad "weight: 20 " ;
+ +Sg+Nom%#:%>i Omadussonad "weight: 20 " ;
          :%{NA%}%>e sg_gen_jt ;
- +Sg+Part:%{NA%}%>tt gi_ki_liide ;
+ +Sg+Part:%{NA%}%>tt gi_ki_liide "weight: 1 ";
       +Pl:%{NA%}%>te semkäänded ;
  +Pl+Part:%>i gi_ki_liide ;
 
 LEXICON tüüp_krae
    +Sg+Nom:%> gi_ki_liide ;
-! +Sg+Nom%#:%> Nimisonad ;
-! +Sg+Nom%#:%> Omadussonad ;
+ +Sg+Nom%#:%> Nimisonad "weight: 20 " ;
+ +Sg+Nom%#:%> Omadussonad "weight: 20 " ;
           :%> sg_gen_jt ;
-  +Sg+Part:%>d gi_ki_liide ;
+  +Sg+Part:%>d gi_ki_liide "weight: 1 " ;
        +Pl:%>d semkäänded ;
   +Pl+Part:%>esid gi_ki_liide ;
 
 LEXICON sg_gen_jt
 
          +Sg+Gen: gi_ki_liide ;
-!       +Sg+Gen:%# Nimisonad ;
-!       +Sg+Gen:%# Omadussonad ;
+       +Sg+Gen:%# Nimisonad ;
+       +Sg+Gen:%# Omadussonad ;
              +Sg: semkäänded ;
          +Pl+Nom:%>d gi_ki_liide ;
 
@@ -183,18 +183,18 @@ LEXICON 2C
 
 LEXICON semkäänded
 
-	+Gen: gi_ki_liide ;
-	+Ill: %>sse gi_ki_liide ;
-	+Ine: %>s gi_ki_liide ;
-	+Ela: %>st gi_ki_liide ;
-	+All: %>le gi_ki_liide ;
-	+Ade: %>l gi_ki_liide ;
-	+Abl: %>lt gi_ki_liide ;
-	+Trl: %>ks gi_ki_liide ;
-	+Ter: %>ni gi_ki_liide ;
-	+Ess: %>na gi_ki_liide ;
-	+Abe: %>ta gi_ki_liide ;
-	+Com: %>ga gi_ki_liide ;
+	+Gen: gi_ki_liide "weight: 2 " ;
+	+Ill: %>sse gi_ki_liide "weight: 2 " ;
+	+Ine: %>s gi_ki_liide "weight: 2 " ;
+	+Ela: %>st gi_ki_liide "weight: 2 " ;
+	+All: %>le gi_ki_liide "weight: 2 " ;
+	+Ade: %>l gi_ki_liide "weight: 2 ";
+	+Abl: %>lt gi_ki_liide "weight: 2 " ;
+	+Trl: %>ks gi_ki_liide "weight: 2 " ;
+	+Ter: %>ni gi_ki_liide "weight: 2 " ;
+	+Ess: %>na gi_ki_liide "weight: 2 " ;
+	+Abe: %>ta gi_ki_liide "weight: 2 ";
+	+Com: %>ga gi_ki_liide "weight: 2 ";
 
 LEXICON  gi_ki_liide
 	 +gi_ki_liide:%>gi # ;
