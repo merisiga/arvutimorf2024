@@ -1,0 +1,115 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+ %#:0
+
+! 
+
+ G1:g ! lagi
+ G1:0 ! lae
+ B1:b ! tuba
+ B1:0 ! toa
+ D1:d ! rida
+ D1:0 ! rea
+ S1:s ! süsi
+ S1:0 ! söe
+
+ K1:k ! vokk
+ K1:0 ! voki
+ P1:p ! täpp
+ P1:0 ! täpi
+ T1:t ! kott
+ T1:0 ! koti
+
+ GK:g ! kalagi
+ GK:k ! kurkki
+
+ T2:t
+ T2:d
+ P2:p
+ P2:b
+ K2:k ! kurk
+ K2:g ! kurgi
+
+
+;
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+VoicelessConsonant = g b d k p t s h f š z ž
+                     G B D K P T S H F Š Z Ž ;  
+
+Definitions
+
+Rules 
+ 
+
+! ----- kaashäälikute astmevaheldus
+
+"Nõrgas astmes vahel gbds kaob"
+
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( G1 B1 D1 S1) 
+           Cy in (  0  0  0  0)
+     matched ;
+
+! lexical: s u G1 u {NA}          NB! sellised kommentaarid tuleb kirjutada alati ENNE oma reegli kirjutamist; 
+! surface: s o  0 o  0  
+
+"u madaldub o-ks"
+
+u:o  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
+          [.#. | Consonant]    _   G1:0 %{NA%}:0 %>:0 :Vowel ;
+
+! lexical: s u G1 u {NA}
+! surface: s o  0 o  0  
+
+! lexcial: t u G1 {NA} > e > l
+! surface: t o 0  0    0 e
+
+"i madaldub e-ks"
+
+i:e  <=>  [.#. | Consonant]    _   D1:0 :Vowel ;
+
+! lexical: r i D1 a {NA}
+! surface: r e  0 a  0
+
+"ü madaldub ö-ks"
+
+ü:ö  <=>  [.#. | Consonant]    _   S1:0  %{NA%}:0 %>:0 :Vowel ;
+
+! lexical: s ü S1 {NA} > e
+! surface: s ö 0  0    0 e
+
+
+
+"Nõrgeneva astmevahelduse korral kk->k, pp->p, tt->t"
+
+Cx:0  <=> Cy _ %{NA%}:0 ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( K1 P1 T1 ) 
+           Cy in (  k  p  t )
+     matched ;
+
+"Nõrgeneva astmevahelduse korral k->g, p->b, t->d"
+
+Cx:Cy  <=> _ %{NA%}:0 ; 
+      where Cx in ( K2 P2 T2 )
+            Cy in (  g  b  d )
+      matched ;
+
+"Kui sufiksile eelneb hääletu konsonant, siis gi -> ki"
+GK:k <=> :VoicelessConsonant %>:0 _  ; 
+  

@@ -1,0 +1,1 @@
+Nummerdasin erinevate muuttüüpide oletused, et saaksin paremini jälgida, milliseid muuttüüpe oletatakse.

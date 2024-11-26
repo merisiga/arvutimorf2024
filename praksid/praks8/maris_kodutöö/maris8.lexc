@@ -1,0 +1,236 @@
+
+Multichar_Symbols
+
++N                ! Nimisõna
++A                ! Omadussõna
++Sg
++Pl
++Nom
++Gen
++Part
++Ill
++In
++El
++All              ! Alaleütlev
++Ad                 
++Abl
++Tr
++Term
++Es
++Abes
++Kom
+
++oleta1
++oleta2
++oleta3
++oleta4
++oleta5
++oleta6
++oleta7
++oleta8
++oleta9
++oleta0
+
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+%#                ! liitsõna piir
+
+G1                ! g või null
+B1                ! b või null
+D1                ! d või null
+S1                ! s või null
+K1
+K2
+P1
+P2
+T1
+T2
+GK
+
+
+Definitions
+
+C = [ b|c|d|f|g|h|j|k|l|m|n|p|r|s|t|v ] ;
+V = [ a|e|i|o|u|õ|ä|ö|ü ] ;
+L = V | C ;
+A = [a|i|o|u] ;
+M = [l|m|n|r] ;
+
+
+LEXICON Root
+
+Nimisonad ;
+Omadussonad ;
+Oletused ;
+
+
+LEXICON Oletused
+
+< C* V C+ "+oleta1":0 "+N":0 > tüüp_täpp "weight: 200"; ! või muu jätkuleksikon, mis sobib 1-silbilise kaashäälikulõpulise sõna lõppude kirjeldamiseks
+< L+ L {lik} "+oleta2":0 "+A":0 > tüüp_õnnelik "weight: 200"; 
+< V+ C+ V C+ V "+oleta3":0 "+N":0 > tüüp_aasta "weight: 200";
+< L+  V {li} {ne}:0 "+oleta4":0 "+A":0 > tüüp_oluline "weight: 200";
+< L+ C {us} "+oleta5":0 "+N":0 > tüüp_harjutus "weight: 200";
+< L V* C+ V {s} "+oleta6":0 "+N":0 > tüüp_katus "weight: 300";
+< C+ V C+ V "+oleta7":0 "+N":0 > tüüp_pere "weight: 300";
+< L+ V {ne}:0 "+oleta8":0 "+A":0 > tüüp_soolane "weight: 200"; 
+< C* V C A "+oleta9":0 "+N":0 > tüüp_ema "weight: 200" ;
+< L* C V C V M "+oleta0":0 "+N":0 > tüüp_seminar "weight: 300";
+
+
+
+LEXICON Nimisonad
+
+kati+N:kati tüüp_pere ;    ! leksikaalne pool : pindesitus
+karu+N:karu tüüp_ema ;
+võru+N:võru tüüp_ema ;
+käbi+N:käbi tüüp_ema ;
+täpp+N:täpP1 tüüp_täpp ;
+kott+N:kotT1 tüüp_täpp ;
+rida+N:riD1a tüüp_ema ;
+süsi+N:süS1 tüüp_käsi ;
+vokk+N:vokK1 tüüp_täpp ;
+kurk+N:kurK2 tüüp_täpp ;
+tugi+N:tuG1 tüüp_tugi ;
+prügi+N:prügi tüüp_ema ;
+nimi+N:nim tüüp_tugi ;      
+paat+N:paaT2 tüüp_täpp;
+
+
+LEXICON Omadussonad
+
+kena+A:ken tüüp_kena ;
+
+
+LEXICON tüüp_õnnelik
+  +Sg+Nom: gi_lopp "weight: 10" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%}%>u sg_gen_jt ; 
+  +Sg+Part:%>ku gi_lopp "weight: 30" ;            
+  +Pl:%>kude semkäänded ;
+  +Pl+Part:%>ke gi_lopp ;
+
+LEXICON tüüp_aasta
+  +Sg+Nom: gi_lopp "weight: 10" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%>t gi_lopp "weight: 30" ;            
+  +Pl:%>te semkäänded ;
+  +Pl+Part:%>id gi_lopp ;
+
+LEXICON tüüp_oluline
+  +Sg+Nom:%>ne gi_lopp "weight: 10" ;
+  +Sg+Nom%#:%>ne Root "weight: 100" ;
+  :%{NA%}%>se sg_gen_jt ;
+  +Sg+Part:{NA%}%>st gi_lopp "weight: 30" ;
+  +Pl:{NA%}%>ste semkäänded ;
+  +Pl+Part:%>si gi_lopp ;
+
+LEXICON tüüp_harjutus
+  +Sg+Nom: gi_lopp "weight: 10" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%}%>e sg_gen_jt ; 
+  +Sg+Part:%>t gi_lopp "weight: 30" ;            
+  +Pl:%>te semkäänded ;
+  +Pl+Part:%>i gi_lopp ;
+
+LEXICON tüüp_katus
+  +Sg+Nom: gi_lopp "weight: 10" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%}%>e sg_gen_jt ; 
+  +Sg+Part:%>t gi_lopp "weight: 30" ;            
+  +Pl:%>te semkäänded ;
+  +Pl+Part:%>eid gi_lopp ;
+
+LEXICON tüüp_soolane
+  +Sg+Nom:%>ne gi_lopp "weight: 10" ;
+  +Sg+Nom%#:%>ne Root "weight: 100" ;
+  :%{NA%}%>se sg_gen_jt ;
+  +Sg+Part:{NA%}%>st gi_lopp "weight: 30" ;
+  +Pl:{NA%}%>ste semkäänded ;
+  +Pl+Part:%>seid gi_lopp ;
+
+LEXICON tüüp_seminar
+  +Sg+Nom: gi_lopp "weight: 10" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%}%>i sg_gen_jt ; 
+  +Sg+Part:%>i gi_lopp "weight: 30" ;            
+  +Pl:%>ide semkäänded ;
+  +Pl+Part:%>e gi_lopp ;
+
+LEXICON tüüp_ema
+  +Sg+Nom: gi_lopp "weight: 1" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%> gi_lopp "weight: 3" ;            
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_kena
+  +Sg+Nom:%>a gi_lopp "weight: 1" ;
+  +Sg+Nom%#:%>a Root "weight: 100" ;
+  :%{NA%}%>a sg_gen_jt ;
+  +Sg+Part:%>a gi_lopp "weight: 3" ;            
+  +Pl:%>ade semkäänded ;
+  +Pl+Part:%>asid gi_lopp ;
+
+LEXICON tüüp_pere
+  +Sg+Nom: gi_lopp "weight: 1" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%} sg_gen_jt ; 
+  +Sg+Part:%>t gi_lopp "weight: 3" ;            
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_täpp
+  +Sg+Nom: gi_lopp "weight: 1" ;
+  +Sg+Nom%#: Root "weight: 100" ;
+  :%{NA%}%>i sg_gen_jt ; 
+  +Sg+Part:%>i gi_lopp "weight: 3" ;            
+  +Pl:%>ide semkäänded ;
+  +Pl+Part:%>isid gi_lopp ;
+
+LEXICON tüüp_käsi
+  +Sg+Nom:%>i gi_lopp "weight: 1" ;
+  +Sg+Nom%#:%>i Root "weight: 100" ;
+  :%{NA%}%>e sg_gen_jt ;
+  +Sg+Part:{NA%}%>tt gi_lopp "weight: 3" ;
+  +Pl:{NA%}%>te semkäänded ;
+  +Pl+Part:%>i gi_lopp ;
+
+LEXICON tüüp_tugi
+	+Sg+Nom:%>i gi_lopp "weight: 1" ;
+  +Sg+Nom%#:%>i Root "weight: 100" ;
+	:%{NA%}%>e sg_gen_jt ;
+	+Sg+Part:%>e gi_lopp "weight: 3" ;
+	+Pl:%>ede semkäänded ;
+	+Pl+Part:%>esid gi_lopp ;
+
+
+LEXICON sg_gen_jt
+
+  +Sg+Gen: %>i gi_lopp ;    ! lisatud %>i ja #
+  +Sg+Gen%#: Root "weight: 100" ;
+  +Sg: semkäänded ;
+  +Pl+Nom:%>d gi_lopp ;
+  
+
+LEXICON gi_lopp
+  +Rohk:%>GKi # ;
+  : # ;
+  
+
+LEXICON semkäänded
+    +Gen: gi_lopp "weight: 2" ;
+    +Ill:%>sse gi_lopp "weight: 4" ;
+    +In:%>s gi_lopp "weight: 4" ;
+    +El:%>st gi_lopp "weight: 4" ;
+    +All:%>le gi_lopp "weight: 4" ;
+    +Ad:%>l gi_lopp "weight: 4" ;
+    +Abl:%>lt gi_lopp "weight: 4" ;
+    +Tr:%>ks gi_lopp "weight: 4" ;
+    +Term:%>ni gi_lopp "weight: 4" ;
+    +Es:%>na gi_lopp "weight: 4" ;
+    +Abes:%>ta gi_lopp "weight: 4" ;
+    +Kom:%>ga gi_lopp "weight: 4" ;
