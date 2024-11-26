@@ -1,0 +1,175 @@
+Multichar_Symbols
+
++S ! Nimisõna
++A ! Omadussõna
++V ! Tegusõna
++P ! Asesõna
++N ! Arvsõna
++Adv ! Määrsõna
++I ! Hüüdsõna
++C ! Sidesõna
++Adp ! Kaasõna
+ 
++Sg
++Pl
+
++Nom ! Nimetav
++Gen ! Omastav
++Part ! Osastav
++Ill ! Sisseütlev
++Ine ! Seesütlev
++Ela ! Seestütlev
++All ! Alaleütlev
++Ade ! Alalütlev
++Abl ! Alaltütlev
++Trl ! Saav
++Ter ! Rajav
++Ess ! Olev
++Abe ! Ilmaütlev
++Com ! Kaasaütlev
+
++gi_ki
+
++oleta1
++oleta2
++oleta3
++oleta4
++oleta5
++oleta6
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+%#                ! liitsõna piir
+
+G1 ! g või null
+B1 ! b või null
+D1 ! d või null
+S1 ! s või null
+
+T2 ! t või d
+
+T3 ! tt või t
+K3 ! kk või k
+P3 ! pp või p
+
+E1 ! e või null
+
+
+Definitions
+
+C = [ b|c|d|f|g|h|j|k|l|m|n|p|r|s|t|v ] ;
+V = [ a|e|i|o|u|õ|ä|ö|ü ] ;
+L = V | C ;
+B = [ b|g|d ] ;
+
+LEXICON Root
+
+	Nimisonad ;
+	Omadussonad ;
+	Oletused ;
+	
+LEXICON Oletused
+
+	< C* V C "+oleta1":0 "+S":0 > tüüp_nimi "weight: 200" ;
+	< V* C V "+oleta2":0 "+S":0 > tüüp_abi "weight: 200" ;
+	< C* V V "+oleta3":0 "+S":0 > tüüp_maa "weight: 200" ;
+	< C* V B V "+oleta4":0 "+S":0 > tüüp_tuba "weight: 200" ;
+	< C* V V "r" "+oleta5":0 ["+S" | "+A"]:0 > tüüp_hiir "weight: 200" ;
+	< C* V V "l" "+oleta6":0 ["+S" | "+A"]:0 > tüüp_siil "weight: 200" ;
+	
+	
+LEXICON Omadussonad
+	
+	maa+S:maa tüüp_maa ;
+	abi+S:abi tüüp_abi ;
+	elu+S:elu tüüp_abi ;
+	isa+S:isa tüüp_abi ;
+	suur+A:suur tüüp_hiir ;
+
+LEXICON Nimisonad
+
+	vesi+S:veS1 tüüp_käsi; 
+	siga+S:siG1a tüüp_tuba ;
+	käsi+S:käS1 tüüp_käsi;      ! s -> 0
+	tuba+S:tuB1a tüüp_tuba ;      ! u -> o ja b -> 0
+	nimi+S:nim tüüp_nimi ;  
+	
+	
+LEXICON tüüp_tuba
+    +Sg+Nom: gi_ki "weight: 10" ;
+    	:%{NA%} sg_gen "weight: 30" ;
+    +Sg+Part: gi_ki "weight: 20" ;
+    	+Pl:%>de semkäänded "weight: 50";
+    +Pl+Part:%>sid gi_ki "weight: 40";
+
+LEXICON tüüp_käsi
+	+Sg+Nom:%>i gi_ki "weight: 10" ;
+		:%{NA%}e sg_gen "weight: 20";
+	+Sg+Part:%{NA%}tt gi_ki "weight: 30" ;
+		+Pl:%{NA%}te semkäänded "weight: 50";
+	+Pl+Part:%>i gi_ki "weight: 40" ;
+
+LEXICON tüüp_nimi
+	+Sg+Nom:%>i gi_ki "weight: 10" ;
+		:%>e sg_gen "weight: 20";
+	+Sg+Part:%>e gi_ki "weight: 30";
+		+Pl:%>ede semkäänded "weight: 50";
+	+Pl+Part:%>esid gi_ki "weight: 40" ;
+
+LEXICON tüüp_abi
+	+Sg+Nom: gi_ki "weight: 10" ;
+	+Sg+Nom%#: Nimisonad "weight: 100";
+		: sg_gen "weight: 20" ;
+	+Sg+Part: gi_ki "weight: 30" ;
+		+Pl:%>de semkäänded "weight: 50";
+	+Pl+Part:%>sid gi_ki "weight: 40" ;
+	
+LEXICON tüüp_maa
+	+Sg+Nom: gi_ki "weight: 10" ;
+	+Sg+Nom%#: Nimisonad "weight: 100";
+		: sg_gen "weight: 20" ;
+	+Sg+Part:%>d gi_ki "weight: 30" ;
+		+Pl:%>de semkäänded "weight: 50" ;
+	+Pl+Part:%>sid gi_ki "weight: 40" ;
+
+LEXICON tüüp_hiir
+	+Sg+Nom: gi_ki "weight: 10" ;
+	+Sg+Nom%#: Nimisonad "weight: 100" ;
+		:%>e  sg_gen "weight: 20" ;
+	+Sg+Part:%>t gi_ki "weight: 30" ;
+		+Pl:%>te semkäänded "weight: 50" ;
+	+Pl+Part:%>i  gi_ki "weight: 40" ;
+
+LEXICON tüüp_siil
+	+Sg+Nom: gi_ki "weight: 10" ;
+	+Sg+Nom%#: Nimisonad "weight: 100" ;
+		:%>i  sg_gen "weight: 20" ;
+	+Sg+Part:%>i gi_ki "weight: 30" ;
+		+Pl:%>ide semkäänded "weight: 50" ;
+	+Pl+Part:%>e  gi_ki "weight: 40" ;
+
+
+LEXICON sg_gen                    ! leksikon kõigi muutuste puhul, mis nõuavad genitiivi
+	+Sg+Gen: gi_ki ;
+	       +Sg: semkäänded ; 
+	+Pl+Nom:%>d gi_ki ;
+
+LEXICON semkäänded
+	+Gen: gi_ki ;
+	+Ill:%>sse gi_ki ;
+	+Ine:%>s gi_ki ;
+	+Ela:%>st gi_ki ;
+	+All:%>le gi_ki ;
+	+Ade:%>l gi_ki ;
+	+Abl:%>lt gi_ki ;
+	+Trl:%>ks gi_ki ;
+	+Ter:%>ni gi_ki ;
+	+Ess:%>na gi_ki ;
+	+Abe:%>ta gi_ki ;
+	+Com:%>ga gi_ki ;
+
+LEXICON gi_ki                      ! Leksikon sufiksite gi või ki lisamisek (vaikimisi gi)
+	+gi_ki:%>gi # ;
+	# ;  ! Kui gi või ki puudub     
+

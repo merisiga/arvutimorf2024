@@ -1,0 +1,6 @@
+1) Ma ei ole probleemi lahendanud, mis üllatab mind, sest teistes lexc-failides töötavad reeglid väga hästi.
+echo 'tuB1a+S+Sg+Nom' | hfst-lookup sofia7.hfst 
+
+> tuB1a+S+S+Sg+Nom tuB1a 0,000000
+
+2) Mingil põhjusel ei tunne oletused muid vorme kui genitiivi, näiteks koolist.
