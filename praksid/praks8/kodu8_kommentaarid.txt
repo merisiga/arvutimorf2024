@@ -1,0 +1,35 @@
+
+Maris 3 p
+
+Minu meelest on näha, et alustatud teel edasi minnes jõuaksite üsna korraliku morf analüsaatorini.
+
+Annika 2 p
+
+Muidu on kõik korras, aga häälikumustrid minu meelest ei ole päris kooskõlas nendega seotud muuttüüpidega. Näiteks.
+
+echo 'soobik+S+Sg+Gen' | hfst-lookup veskimae8.fono.hfst
+> soobik+S+Sg+Gen	soobike	10,000000
+
+echo 'soobel+S+Sg+Gen' | hfst-lookup veskimae8.fono.hfst
+> soobel+S+Sg+Gen	soobele	10,000000
+
+Sofia 3 p
+
+Näib, et töötab:
+
+echo 'paadega' | hfst-lookup sofia8.ifst
+> paadega	paa+oleta3+S+Pl+Com	250,000000
+
+echo 'padadega' | hfst-lookup sofia8.ifst
+> padadega	pada+oleta4+S+Pl+Com	250,000000
+
+echo 'toasse' | hfst-lookup sofia8.ifst
+> toasse	tuba+S+Sg+Ill	30,000000
+toasse	toa+oleta3+S+Sg+Ill	220,000000
+
+Mis puutub eelmise praksi lahenduse vigasust, siis ma arvan, et probleem on selles, et lexc oletamise-muster erineb sellest, mida twolc eeldab
+
+echo 'tuB1a+S+Sg+Nom' | hfst-lookup sofia7.hfst
+> tuB1a+S+Sg+Nom	tuB1a	0,000000
+
+

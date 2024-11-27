@@ -1,0 +1,48 @@
+
+
+Muunduri kasutamine pythoni programmi seest
+
+1. Installi hfst pakett (kui pole juba installitud)
+
+Selleks tee:
+sudo apt update && sudo apt-get install -y \
+    hfst \
+    python3 \
+    python3-pip \
+    python3-hfst \
+
+2. hfst teegi kasutamise näidisprogrammiks on mini_naide.py
+Seal on kasutusel üks Marise tehtud viimase kodutöö muundur.
+
+kasutusnäide ühe sõnaga, koos väljundi lihtsustamisega:
+
+python3 mini_naide.py täppidest | sed 's/@_EPSILON_SYMBOL_@//g'
+('täpp+N+Pl+El', 4.0)
+('täpp+oleta1+N+Pl+El', 204.0)
+('täppidene+oleta8+A+Sg+Part', 230.0)
+('täppi+oleta7+N+Pl+El', 304.0)
+('täpp+N+Sg+Nom#idene+oleta8+A+Sg+Part', 330.0)
+('täpp+N+Sg+Nom#ides+oleta6+N+Sg+Part', 430.0)
+('täpp+oleta1+N+Sg+Gen#dest+oleta1+N+Sg+Nom', 501.0)
+('täp+oleta1+N+Sg+Nom#pidene+oleta8+A+Sg+Part', 530.0)
+('täpp+oleta1+N+Sg+Nom#idene+oleta8+A+Sg+Part', 530.0)
+('täpp+oleta1+N+Sg+Gen#dene+oleta8+A+Sg+Part', 530.0)
+('täpp+N+Sg+Nom#id+oleta1+N+Sg+Nom#est+oleta1+N+Sg+Nom', 601.0)
+('täppi+oleta7+N+Sg+Nom#dest+oleta1+N+Sg+Nom', 601.0)
+('täppi+oleta7+N+Sg+Gen#dest+oleta1+N+Sg+Nom', 601.0)
+('täp+oleta1+N+Sg+Nom#pide+oleta7+N+Sg+El', 604.0)
+('täp+oleta1+N+Sg+Nom#pides+oleta6+N+Sg+Part', 630.0)
+('täpp+oleta1+N+Sg+Nom#ides+oleta6+N+Sg+Part', 630.0)
+('täppi+oleta7+N+Sg+Nom#dene+oleta8+A+Sg+Part', 630.0)
+('täppi+oleta7+N+Sg+Gen#dene+oleta8+A+Sg+Part', 630.0)
+('täp+oleta1+N+Sg+Nom#pid+oleta1+N+Sg+Nom#est+oleta1+N+Sg+Nom', 801.0)
+('täpp+oleta1+N+Sg+Nom#id+oleta1+N+Sg+Nom#est+oleta1+N+Sg+Nom', 801.0)
+
+Kodutöö:
+
+Kasuta Marise muunduri asemel mingit oma muundurit pythoni programmi seest.
+Oma muunduriks võib olla ka mingi varem tehtud muundur, nt. täheteisendaja.
+Soovi korral tee pythoni programm ilusamaks või kasuta hoopis mõne teise pythoni programmi seest, 
+nt. mõne sellise seest, mille oled teinud mingil muul eesmärgil.
+
+
