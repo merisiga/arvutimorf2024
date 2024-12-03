@@ -1,0 +1,3 @@
+Mul oli ülesande täitmisel kaks keerulist hetke.
+1) Ma ei saanud pikka aega aru, miks "toanimi" puhul toa - alati oletatud, ja mitte võetud sõnastikust, ja siis ma mõistsin, et ma lexc faili toa ei olnud määratud võimalus luua liitsõnu ja ma parandasin seda.
+2) Mul ei olnud sõna isasiil parseldatud, kuid siis sain aru, et pean täpsustama, et ka oletused-ist võib moodustada liitsõnu.
