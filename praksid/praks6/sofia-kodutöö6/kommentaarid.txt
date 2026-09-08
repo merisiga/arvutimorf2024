@@ -1,3 +1,0 @@
-xfst: Tahtsin lisada morfeemide eraldamise märgi, kuid see ei tööta veel, et näidata morfideemide vahelisi piire
-
-Põhimõtteliselt meeldib mulle lexc-failiga töötamine rohkem, sest see on mugavam, kui ma leian kõik andmed ühest failist. Siiski on xfst-meetod mugavam, sest see on universaalsem. See lihtsustab tööd, kui on olemas palju kombinatsioone.
